@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ayansh Overseas Consultancy</title>
+<style>
+  body { margin:0; font-family:Arial, sans-serif; background:#f9f9f9; color: #222; }
+  header { background:#0a3d62; color:#fff; text-align:center; padding:15px; }
+  nav { display:flex; justify-content:center; background:#1e6091; }
+  nav a { color:#fff; padding:14px 20px; text-decoration:none; font-weight:bold; }
+  nav a:hover { background:#145374; }
+  .hero { background:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1') no-repeat center/cover; height:400px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:white; text-align:center; padding:20px; }
+  .hero h1 { background:rgba(0,0,0,0.5); padding:10px; border-radius:8px; }
+  footer { background:#0a3d62; color:white; text-align:center; padding:20px; position: relative; z-index: 1; }
+
+  /* Services Section */
+  .services {
+    max-width: 1100px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 30px;
+    padding: 0 20px;
+  }
+  .service-card {
+    background: white;
+    padding: 25px 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+  }
+  .service-icon {
+    background: #1e2f66;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+  }
+  .service-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  .service-desc {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  /* Marquee container for flags and names */
+  .flags-marquee-wrapper {
+    position: fixed;
+    bottom: 60px;  /* just above footer */
+    left: 0;
+    width: 100%;
+    background: #e0f0ff;
+    overflow: hidden;
+    height: 50px;
+    border-top: 2px solid #0a3d62;
+    border-bottom: 2px solid #0a3d62;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+  }
+  .flags-marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 50s linear infinite;
+    font-size: 1.4rem;
+    padding-left: 100%;
+  }
+  .flags-marquee span {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 25px;
+    user-select: none;
+    cursor: default;
+    white-space: nowrap;
+    font-weight: 600;
+    color: #0a3d62;
+  }
+  .flags-marquee span .flag {
+    font-size: 2rem;
+    margin-right: 8px;
+    line-height: 1;
+  }
+  
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* Chat button fixed above marquee */
+  #chat-btn {
+    position: fixed;
+    bottom: 115px; /* above the flags marquee */
+    right: 20px;
+    background: #0a3d62;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 10001;
+  }
+
+  /* Chat box fixed at bottom right above flags marquee */
+  #chat-box {
+    display: none;  /* hidden by default */
+    position: fixed;
+    bottom: 120px; /* just above the chat button */
+    right: 20px;
+    background: white;
+    width: 320px;
+    max-height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+    z-index: 10000;
+    flex-direction: column;
+  }
+  #chat-box.active {
+    display: flex;
+  }
+  #chat-box header {
+    background: #0a3d62;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  #chat-box header button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 0 5px;
+    line-height: 1;
+    font-weight: bold;
+  }
+  #chat-content {
+    padding: 20px;
+    overflow-y: auto;
+    flex-grow: 1;
+  }
+  #chat-content label { display:block; margin:10px 0 5px; }
+  #chat-content input, #chat-content select, #chat-content textarea {
+    width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;
+    box-sizing: border-box; font-family: Arial, sans-serif;
+  }
+  #chat-content textarea { resize: vertical; }
+  #chat-content button {
+    margin-top: 15px;
+    background: #0a3d62;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  #submit-msg {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+  }
+</style>
+
+<!-- Font Awesome CDN for icons -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+</head>
+<body>
+
+<header>
+  <h1>Ayansh Overseas Consultancy</h1>
+  <p>Your Trusted Partner for Global Education</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About Us</a>
+ <a href="pages/contact.html">Contact Us</a>
+
+</nav>
+
+<section class="hero">
+  <h1>Study Abroad with Confidence</h1>
+</section>
+
+<!-- Services Section -->
+<section class="services" aria-label="Our Services">
+  <article class="service-card">
+    <div class="service-icon"><i class="fas fa-university" aria-hidden="true"></i></div>
+    <h3 class="service-title">Right Course In The Right University</h3>
+    <p class="service-desc">
+      We provide in-depth information about the universities, institutes and courses offered based on students academics and their interests.
+    </p>
+  </article>
+
+  <article class="service-card">
+    <div class="service-icon"><i class="fas fa-stethoscope" aria-hidden="true"></i></div>
+    <h3 class="service-title">Career Counseling</h3>
+    <p class="service-desc">
+      At Ayansh Overseas Consultancy, we believe in understating and assessing students personal requirements hence provide best career counseling to the students to succeed.
+    </p>
+  </article>
+
+  <article class="service-card">
+    <div class="service-icon"><i class="fas fa-file-alt" aria-hidden="true"></i></div>
+    <h3 class="service-title">Pre Departure Briefings</h3>
+    <p class="service-desc">
+      Ayansh Overseas Consultancy conducts pre-departure sessions for its students. We feel this is one of the most important sessions in the whole process to understand the abroad climate.
+    </p>
+  </article>
+
+  <article class="service-card">
+    <div class="service-icon"><i class="fas fa-plane" aria-hidden="true"></i></div>
+    <h3 class="service-title">Travel Assistance</h3>
+    <p class="service-desc">
+      We also assist students with the booking of flights well in advance for ideal departure dates, convenient routes and avail the discounts.
+    </p>
+  </article>
+
+  <article class="service-card">
+    <div class="service-icon"><i class="fas fa-id-card" aria-hidden="true"></i></div>
+    <h3 class="service-title">Visa Assistance</h3>
+    <p class="service-desc">
+      Assistance right from filling up application forms, guiding through the required docs, procedures and also to plan and prepare for finances.
+    </p>
+  </article>
+
+  <article class="service-card">
+    <div class="service-icon"><i class="fas fa-bed" aria-hidden="true"></i></div>
+    <h3 class="service-title">Accommodation Assistance</h3>
+    <p class="service-desc">
+      Our counselors guide and assist students with the types of available accommodations that fit into their needs &amp; budget so that the parents are rest assured about their child's safety.
+    </p>
+  </article>
+</section>
+
+<!-- Marquee with scrolling flags + country names above footer -->
+<div class="flags-marquee-wrapper" aria-label="Scrolling country flags with names">
+  <div class="flags-marquee" aria-hidden="true">
+    <span title="United States"><span class="flag"></span>United States</span>
+    <span title="United Kingdom"><span class="flag"></span>United Kingdom</span>
+    <span title="Canada"><span class="flag"></span>Canada</span>
+    <span title="Australia"><span class="flag"></span>Australia</span>
+    <span title="New Zealand"><span class="flag"></span>New Zealand</span>
+    <span title="Germany"><span class="flag"></span>Germany</span>
+    <span title="France"><span class="flag"></span>France</span>
+    <span title="Ireland"><span class="flag"></span>Ireland</span>
+    <span title="Netherlands"><span class="flag"></span>Netherlands</span>
+    <!-- Repeat for smooth loop -->
+    <span title="United States"><span class="flag"></span>United States</span>
+    <span title="United Kingdom"><span class="flag"></span>United Kingdom</span>
+    <span title="Canada"><span class="flag"></span>Canada</span>
+    <span title="Australia"><span class="flag"></span>Australia</span>
+    <span title="New Zealand"><span class="flag"></span>New Zealand</span>
+    <span title="Germany"><span class="flag"></span>Germany</span>
+    <span title="France"><span class="flag"></span>France</span>
+    <span title="Ireland"><span class="flag"></span>Ireland</span>
+    <span title="Netherlands"><span class="flag"></span>Netherlands</span>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Ayansh Overseas Consultancy</p>
+</footer>
+
+<button id="chat-btn" aria-label="Open chat">💬 Chat</button>
+
+<div id="chat-box" role="dialog" aria-modal="true" aria-labelledby="chat-title" tabindex="-1">
+  <header>
+    <span id="chat-title">Enquiry Form</span>
+    <div>
+      <button id="minimize-btn" title="Minimize chat" aria-label="Minimize chat">−</button>
+      <button id="close-btn" title="Close chat" aria-label="Close chat">×</button>
+    </div>
+  </header>
+  <div id="chat-content">
+    <form id="enquiryForm">
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" required>
+
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input id="phone" type="tel" name="phone" required>
+
+      <label for="city">Current City/State</label>
+      <input id="city" type="text" name="city" required>
+
+      <label for="destination">Destination Country</label>
+      <select id="destination" name="destination" required>
+        <option value="">Select Country</option>
+        <option>United States</option>
+        <option>United Kingdom</option>
+        <option>Canada</option>
+        <option>Australia</option>
+        <option>New Zealand</option>
+        <option>Germany</option>
+        <option>France</option>
+        <option>Ireland</option>
+        <option>Netherlands</option>
+        <option>Singapore</option>
+        <option>UAE</option>
+        <option>Switzerland</option>
+        <option>Japan</option>
+        <option>South Korea</option>
+      </select>
+
+      <label for="visaType">Visa Type</label>
+      <select id="visaType" name="visaType" required>
+        <option value="">Select Visa Type</option>
+        <option>Student Visa</option>
+        <option>Work Visa</option>
+        <option>Tourist Visa</option>
+        <option>Dependent Visa</option>
+      </select>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+    <div id="submit-msg" role="alert" aria-live="polite"></div>
+  </div>
+</div>
+
+<script>
+const chatBtn = document.getElementById('chat-btn');
+const chatBox = document.getElementById('chat-box');
+const form = document.getElementById('enquiryForm');
+const submitMsg = document.getElementById('submit-msg');
+const minimizeBtn = document.getElementById('minimize-btn');
+const closeBtn = document.getElementById('close-btn');
+const chatContent = document.getElementById('chat-content');
+
+// Chat button toggles chat box visibility
+chatBtn.addEventListener('click', () => {
+  if (chatBox.classList.contains('active')) {
+    chatBox.classList.remove('active');
+  } else {
+    chatBox.classList.add('active');
+    chatContent.style.display = 'block'; // ensure content visible when opened
+    submitMsg.textContent = '';          // clear any previous messages
+    form.style.display = 'block';       // show form again if hidden
+    form.reset();
+    chatBox.focus();
+  }
+});
+
+// Close chat box
+closeBtn.addEventListener('click', () => {
+  chatBox.classList.remove('active');
+});
+
+// Minimize / Restore chat box content
+minimizeBtn.addEventListener('click', () => {
+  if (chatContent.style.display === 'none') {
+    chatContent.style.display = 'block';
+    minimizeBtn.textContent = '−';
+  } else {
+    chatContent.style.display = 'none';
+    minimizeBtn.textContent = '+';
+  }
+});
+
+// Handle form submit
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const data = new URLSearchParams(new FormData(form)).toString();
+
+  fetch("https://script.google.com/macros/s/AKfycbxXV0GPBOEYZOwQHECzmI0LOAxXayzbiD-JmzU1G4lylfzGw3B72V2dyaQR1JQXf6ad/exec", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: data
+  })
+  .then(res => res.text())
+  .then(txt => {
+    submitMsg.textContent = "Thank you! You will receive call shortly.";
+    form.style.display = 'none';
+  })
+  .catch(err => {
+    submitMsg.textContent = "Oops! Something went wrong. Please try again.";
+  });
+});
+</script>
+
+</body>
+</html>
