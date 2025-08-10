@@ -70,31 +70,27 @@
     align-items: center;
   }
   .flags-marquee {
-    display: inline-block;
-    white-space: nowrap;
-    animation: marquee 50s linear infinite;
-    font-size: 1.4rem;
+    display: flex;
+    gap: 50px;
     padding-left: 100%;
-  }
-  .flags-marquee span {
-    display: inline-flex;
-    align-items: center;
-    padding: 0 25px;
-    user-select: none;
-    cursor: default;
-    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+    font-size: 1.4rem;
     font-weight: 600;
     color: #0a3d62;
+    user-select: none;
   }
-  .flags-marquee span .flag {
-    font-size: 2rem;
-    margin-right: 8px;
-    line-height: 1;
+  .flags-marquee span {
+    white-space: nowrap;
+    cursor: default;
   }
   
   @keyframes marquee {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }
 
   /* Chat button fixed above marquee */
@@ -121,7 +117,7 @@
     right: 20px;
     background: white;
     width: 320px;
-    max-height: 400px;
+    max-height: 450px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     overflow: hidden;
@@ -180,6 +176,22 @@
     font-weight: bold;
     text-align: center;
     margin-top: 15px;
+  }
+
+  /* Upload button style */
+  #upload-btn {
+    margin-top: 15px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  #upload-btn:hover {
+    background: #219150;
   }
 </style>
 
@@ -259,28 +271,34 @@
   </article>
 </section>
 
-<!-- Marquee with scrolling flags + country names above footer -->
-<div class="flags-marquee-wrapper" aria-label="Scrolling country flags with names">
-  <div class="flags-marquee" aria-hidden="true">
-    <span title="United States"><span class="flag"></span>United States</span>
-    <span title="United Kingdom"><span class="flag"></span>United Kingdom</span>
-    <span title="Canada"><span class="flag"></span>Canada</span>
-    <span title="Australia"><span class="flag"></span>Australia</span>
-    <span title="New Zealand"><span class="flag"></span>New Zealand</span>
-    <span title="Germany"><span class="flag"></span>Germany</span>
-    <span title="France"><span class="flag"></span>France</span>
-    <span title="Ireland"><span class="flag"></span>Ireland</span>
-    <span title="Netherlands"><span class="flag"></span>Netherlands</span>
-    <!-- Repeat for smooth loop -->
-    <span title="United States"><span class="flag"></span>United States</span>
-    <span title="United Kingdom"><span class="flag"></span>United Kingdom</span>
-    <span title="Canada"><span class="flag"></span>Canada</span>
-    <span title="Australia"><span class="flag"></span>Australia</span>
-    <span title="New Zealand"><span class="flag"></span>New Zealand</span>
-    <span title="Germany"><span class="flag"></span>Germany</span>
-    <span title="France"><span class="flag"></span>France</span>
-    <span title="Ireland"><span class="flag"></span>Ireland</span>
-    <span title="Netherlands"><span class="flag"></span>Netherlands</span>
+<!-- Marquee with scrolling country names -->
+<div class="flags-marquee-wrapper" aria-label="Scrolling country names">
+  <div class="flags-marquee" aria-hidden="true" aria-live="off" aria-atomic="true" role="presentation">
+    <span title="United States">United States</span>
+    <span title="United Kingdom">United Kingdom</span>
+    <span title="Canada">Canada</span>
+    <span title="Australia">Australia</span>
+    <span title="New Zealand">New Zealand</span>
+    <span title="Germany">Germany</span>
+    <span title="France">France</span>
+    <span title="Ireland">Ireland</span>
+    <span title="Netherlands">Netherlands</span>
+    <span title="Singapore">Singapore</span>
+    <span title="Switzerland">Switzerland</span>
+
+    <!-- Repeat once more for smooth infinite scrolling -->
+    <span title="United States">United States</span>
+    <span title="United Kingdom">United Kingdom</span>
+    <span title="Canada">Canada</span>
+    <span title="Australia">Australia</span>
+    <span title="New Zealand">New Zealand</span>
+    <span title="Germany">Germany</span>
+    <span title="France">France</span>
+    <span title="Ireland">Ireland</span>
+    <span title="Netherlands">Netherlands</span>
+    <span title="Singapore">Singapore</span>
+    <span title="Switzerland">Switzerland</span>
+    
   </div>
 </div>
 
@@ -345,6 +363,10 @@
 
       <button type="submit">Submit</button>
     </form>
+
+    <!-- Upload Documents Button -->
+    <button id="upload-btn" type="button" aria-label="Upload your documents">Upload Documents</button>
+    
     <div id="submit-msg" role="alert" aria-live="polite"></div>
   </div>
 </div>
@@ -358,6 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const minimizeBtn = document.getElementById('minimize-btn');
   const closeBtn = document.getElementById('close-btn');
   const chatContent = document.getElementById('chat-content');
+  const uploadBtn = document.getElementById('upload-btn');
 
   // Chat button toggles chat box visibility
   chatBtn.addEventListener('click', () => {
@@ -415,6 +438,12 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(err => {
       submitMsg.textContent = "Oops! Something went wrong. Please try again.";
     });
+  });
+
+  // Upload documents button click opens Google Form link
+  uploadBtn.addEventListener('click', () => {
+    const googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSfuTk0YnI4HCgpW4n7oemvsdfStHJpdDUly-D0b3w1LZorkMA/viewform?usp=header"; // <-- Replace with your actual Google Form URL
+    window.open(googleFormURL, '_blank');
   });
 });
 </script>
