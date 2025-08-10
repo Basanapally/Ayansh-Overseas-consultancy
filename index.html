@@ -129,7 +129,7 @@
     flex-direction: column;
   }
   #chat-box.active {
-    display: flex;
+    display: flex !important;
   }
   #chat-box header {
     background: #0a3d62;
@@ -201,8 +201,7 @@
   <a href="index.html">Home</a>
   <a href="services.html">Services</a>
   <a href="about.html">About Us</a>
- <a href="pages/contact.html">Contact Us</a>
-
+  <a href="pages/contact.html">Contact Us</a>
 </nav>
 
 <section class="hero">
@@ -351,62 +350,71 @@
 </div>
 
 <script>
-const chatBtn = document.getElementById('chat-btn');
-const chatBox = document.getElementById('chat-box');
-const form = document.getElementById('enquiryForm');
-const submitMsg = document.getElementById('submit-msg');
-const minimizeBtn = document.getElementById('minimize-btn');
-const closeBtn = document.getElementById('close-btn');
-const chatContent = document.getElementById('chat-content');
+document.addEventListener('DOMContentLoaded', () => {
+  const chatBtn = document.getElementById('chat-btn');
+  const chatBox = document.getElementById('chat-box');
+  const form = document.getElementById('enquiryForm');
+  const submitMsg = document.getElementById('submit-msg');
+  const minimizeBtn = document.getElementById('minimize-btn');
+  const closeBtn = document.getElementById('close-btn');
+  const chatContent = document.getElementById('chat-content');
 
-// Chat button toggles chat box visibility
-chatBtn.addEventListener('click', () => {
-  if (chatBox.classList.contains('active')) {
+  // Chat button toggles chat box visibility
+  chatBtn.addEventListener('click', () => {
+    if (chatBox.classList.contains('active')) {
+      chatBox.classList.remove('active');
+    } else {
+      chatBox.classList.add('active');
+      chatContent.style.display = 'block'; // ensure content visible when opened
+      submitMsg.textContent = '';          // clear any previous messages
+      form.style.display = 'block';       // show form again if hidden
+      form.reset();
+      chatBox.focus();
+    }
+  });
+
+  // Close chat box
+  closeBtn.addEventListener('click', () => {
     chatBox.classList.remove('active');
-  } else {
-    chatBox.classList.add('active');
-    chatContent.style.display = 'block'; // ensure content visible when opened
-    submitMsg.textContent = '';          // clear any previous messages
-    form.style.display = 'block';       // show form again if hidden
-    form.reset();
-    chatBox.focus();
-  }
-});
+  });
 
-// Close chat box
-closeBtn.addEventListener('click', () => {
-  chatBox.classList.remove('active');
-});
+  // Minimize / Restore chat box content
+  minimizeBtn.addEventListener('click', () => {
+    if (chatContent.style.display === 'none') {
+      chatContent.style.display = 'block';
+      minimizeBtn.textContent = '−';
+    } else {
+      chatContent.style.display = 'none';
+      minimizeBtn.textContent = '+';
+    }
+  });
 
-// Minimize / Restore chat box content
-minimizeBtn.addEventListener('click', () => {
-  if (chatContent.style.display === 'none') {
-    chatContent.style.display = 'block';
-    minimizeBtn.textContent = '−';
-  } else {
-    chatContent.style.display = 'none';
-    minimizeBtn.textContent = '+';
-  }
-});
+  // Handle form submit
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-// Handle form submit
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
+    const data = new URLSearchParams(new FormData(form)).toString();
 
-  const data = new URLSearchParams(new FormData(form)).toString();
-
-  fetch("https://script.google.com/macros/s/AKfycbxTUXzp87NBcUbLLsSzd3lavJyt67RogcZmpn9dbEfEAy0QEPlg6fgNEJgQxunia9D8/exec", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: data
-  })
-  .then(res => res.text())
-  .then(txt => {
-    submitMsg.textContent = "Thank you! You will receive call shortly.";
-    form.style.display = 'none';
-  })
-  .catch(err => {
-    submitMsg.textContent = "Oops! Something went wrong. Please try again.";
+    fetch("https://script.google.com/macros/s/AKfycbxTUXzp87NBcUbLLsSzd3lavJyt67RogcZmpn9dbEfEAy0QEPlg6fgNEJgQxunia9D8/exec", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: data
+    })
+    .then(res => res.text())
+    .then(txt => {
+      submitMsg.textContent = "Thank you! You will receive call shortly.";
+      form.style.display = 'none';
+      // Close chat box automatically after 3 seconds
+      setTimeout(() => {
+        chatBox.classList.remove('active');
+        submitMsg.textContent = '';
+        form.reset();
+        form.style.display = 'block';
+      }, 3000);
+    })
+    .catch(err => {
+      submitMsg.textContent = "Oops! Something went wrong. Please try again.";
+    });
   });
 });
 </script>
