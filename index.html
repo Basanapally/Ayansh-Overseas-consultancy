@@ -93,105 +93,60 @@
     }
   }
 
-  /* Chat button fixed above marquee */
-  #chat-btn {
-    position: fixed;
-    bottom: 115px; /* above the flags marquee */
-    right: 20px;
-    background: #0a3d62;
-    color: white;
-    border: none;
-    padding: 15px 20px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    z-index: 10001;
-  }
-
-  /* form box fixed at bottom right above flags marquee */
-  #form-box {
-    display: none;  /* hidden by default */
-    position: fixed;
-    bottom: 120px; /* just above the chat button */
-    right: 20px;
-    background: white;
-    width: 320px;
-    max-height: 450px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    overflow: hidden;
-    z-index: 10000;
-    flex-direction: column;
-  }
-  #chat-box.active {
-    display: flex !important;
-  }
-  #chat-box header {
-    background: #0a3d62;
-    color: white;
-    padding: 10px 15px;
-    font-weight: bold;
-    font-size: 1.2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    user-select: none;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-  #chat-box header button {
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 1.3rem;
-    cursor: pointer;
-    padding: 0 5px;
-    line-height: 1;
-    font-weight: bold;
-  }
-  #chat-content {
+  /* Enquiry Form Section */
+  #enquiry-form-section {
+    max-width: 400px;
+    margin: 40px auto;
     padding: 20px;
-    overflow-y: auto;
-    flex-grow: 1;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
   }
-  #chat-content label { display:block; margin:10px 0 5px; }
-  #chat-content input, #chat-content select, #chat-content textarea {
-    width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;
-    box-sizing: border-box; font-family: Arial, sans-serif;
+  #enquiry-form-section h2 {
+    text-align: center;
+    color: #0a3d62;
   }
-  #chat-content textarea { resize: vertical; }
-  #chat-content button {
-    margin-top: 15px;
+  #enquiry-form-section label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  #enquiry-form-section input,
+  #enquiry-form-section select,
+  #enquiry-form-section textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  #enquiry-form-section textarea {
+    resize: vertical;
+  }
+  #enquiry-form-section button[type="submit"],
+  #upload-btn {
     background: #0a3d62;
     color: white;
-    border: none;
-    padding: 10px;
+    padding: 12px;
     width: 100%;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  #submit-msg {
-    color: green;
+    border: none;
+    border-radius: 4px;
     font-weight: bold;
-    text-align: center;
-    margin-top: 15px;
+    cursor: pointer;
+    margin-top: 10px;
   }
-
-  /* Upload button style */
   #upload-btn {
-    margin-top: 15px;
     background: #27ae60;
-    color: white;
-    border: none;
-    padding: 10px;
-    width: 100%;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
   }
   #upload-btn:hover {
     background: #219150;
+  }
+  #submit-msg {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
   }
 </style>
 
@@ -271,6 +226,65 @@
   </article>
 </section>
 
+<!-- Enquiry Form Section -->
+<section id="enquiry-form-section" aria-label="Enquiry Form">
+  <h2>Enquiry Form</h2>
+  <form id="enquiryForm" novalidate>
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" required />
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required />
+
+    <label for="phone">Phone</label>
+    <input id="phone" name="phone" type="tel" required />
+
+    <label for="city">City</label>
+    <input id="city" name="city" type="text" required />
+
+    <label for="destination">Destination</label>
+    <select id="destination" name="destination" required>
+      <option value="">Select Country</option>
+      <option value="United States">United States</option>
+      <option value="United Kingdom">United Kingdom</option>
+      <option value="Canada">Canada</option>
+      <option value="Australia">Australia</option>
+      <option value="New Zealand">New Zealand</option>
+      <option value="Germany">Germany</option>
+      <option value="France">France</option>
+      <option value="Ireland">Ireland</option>
+      <option value="Netherlands">Netherlands</option>
+      <option value="Singapore">Singapore</option>
+      <option value="Switzerland">Switzerland</option>
+      <option value="Japan">Japan</option>
+      <option value="South Korea">South Korea</option>
+      <option value="UAE">United Arab Emirates (UAE)</option>
+    </select>
+
+    <label for="visaType">Visa Type</label>
+    <select id="visaType" name="visaType" required>
+      <option value="">Select Visa Type</option>
+      <option value="Student Visa">Student Visa</option>
+      <option value="Work Visa">Work Visa</option>
+      <option value="Tourist Visa">Tourist Visa</option>
+      <option value="Dependent Visa">Dependent Visa</option>
+      <option value="Permanent Residency">Permanent Residency</option>
+      <option value="Business Visa">Business Visa</option>
+      <option value="Exchange Visitor Visa">Exchange Visitor Visa</option>
+      <option value="Temporary Resident Visa">Temporary Resident Visa</option>
+    </select>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <button id="upload-btn" type="button" aria-label="Upload your documents">Upload Documents</button>
+
+  <div id="submit-msg" role="alert" aria-live="polite"></div>
+</section>
+
 <!-- Marquee with scrolling country names -->
 <div class="flags-marquee-wrapper" aria-label="Scrolling country names">
   <div class="flags-marquee" aria-hidden="true" aria-live="off" aria-atomic="true" role="presentation">
@@ -298,7 +312,6 @@
     <span title="Netherlands">Netherlands</span>
     <span title="Singapore">Singapore</span>
     <span title="Switzerland">Switzerland</span>
-    
   </div>
 </div>
 
@@ -306,115 +319,19 @@
   <p>© 2025 Ayansh Overseas Consultancy</p>
 </footer>
 
-<button id="chat-btn" aria-label="Open chat">💬 Chat</button>
-
-<div id="chat-box" role="dialog" aria-modal="true" aria-labelledby="chat-title" tabindex="-1">
-  <header>
-    <span id="chat-title">Enquiry Form</span>
-    <div>
-      <button id="minimize-btn" title="Minimize chat" aria-label="Minimize chat">−</button>
-      <button id="close-btn" title="Close chat" aria-label="Close chat">×</button>
-    </div>
-  </header>
-  <div id="chat-content">
-    <form id="enquiryForm">
-      <label for="name">Name</label>
-      <input id="name" type="text" name="name" required>
-
-      <label for="email">Email</label>
-      <input id="email" type="email" name="email" required>
-
-      <label for="phone">Phone Number</label>
-      <input id="phone" type="tel" name="phone" required>
-
-      <label for="city">Current City/State</label>
-      <input id="city" type="text" name="city" required>
-
-      <label for="destination">Destination Country</label>
-      <select id="destination" name="destination" required>
-        <option value="">Select Country</option>
-        <option>United States</option>
-        <option>United Kingdom</option>
-        <option>Canada</option>
-        <option>Australia</option>
-        <option>New Zealand</option>
-        <option>Germany</option>
-        <option>France</option>
-        <option>Ireland</option>
-        <option>Netherlands</option>
-        <option>Singapore</option>
-        <option>UAE</option>
-        <option>Switzerland</option>
-        <option>Japan</option>
-        <option>South Korea</option>
-      </select>
-
-      <label for="visaType">Visa Type</label>
-      <select id="visaType" name="visaType" required>
-        <option value="">Select Visa Type</option>
-        <option>Student Visa</option>
-        <option>Work Visa</option>
-        <option>Tourist Visa</option>
-        <option>Dependent Visa</option>
-      </select>
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
-
-      <button type="submit">Submit</button>
-    </form>
-
-    <!-- Upload Documents Button -->
-    <button id="upload-btn" type="button" aria-label="Upload your documents">Upload Documents</button>
-    
-    <div id="submit-msg" role="alert" aria-live="polite"></div>
-  </div>
-</div>
-
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const chatBtn = document.getElementById('chat-btn');
-  const chatBox = document.getElementById('chat-box');
   const form = document.getElementById('enquiryForm');
   const submitMsg = document.getElementById('submit-msg');
-  const minimizeBtn = document.getElementById('minimize-btn');
-  const closeBtn = document.getElementById('close-btn');
-  const chatContent = document.getElementById('chat-content');
   const uploadBtn = document.getElementById('upload-btn');
 
-  // Chat button toggles chat box visibility
-  chatBtn.addEventListener('click', () => {
-    if (chatBox.classList.contains('active')) {
-      chatBox.classList.remove('active');
-    } else {
-      chatBox.classList.add('active');
-      chatContent.style.display = 'block'; // ensure content visible when opened
-      submitMsg.textContent = '';          // clear any previous messages
-      form.style.display = 'block';       // show form again if hidden
-      form.reset();
-      chatBox.focus();
-    }
-  });
-
-  // Close chat box
-  closeBtn.addEventListener('click', () => {
-    chatBox.classList.remove('active');
-  });
-
-  // Minimize / Restore chat box content
-  minimizeBtn.addEventListener('click', () => {
-    if (chatContent.style.display === 'none') {
-      chatContent.style.display = 'block';
-      minimizeBtn.textContent = '−';
-    } else {
-      chatContent.style.display = 'none';
-      minimizeBtn.textContent = '+';
-    }
-  });
-
-  // Handle form submit
-  form.addEventListener('submit', function(e) {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
 
     const data = new URLSearchParams(new FormData(form)).toString();
 
@@ -425,28 +342,22 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .then(res => res.text())
     .then(txt => {
-      submitMsg.textContent = "Thank you! You will receive call shortly.";
-      form.style.display = 'none';
-      // Close chat box automatically after 3 seconds
-      setTimeout(() => {
-        chatBox.classList.remove('active');
-        submitMsg.textContent = '';
-        form.reset();
-        form.style.display = 'block';
-      }, 3000);
+      submitMsg.style.color = 'green';
+      submitMsg.textContent = "Thank you! We will get back to you as soon as possible.";
+      form.reset();
     })
     .catch(err => {
+      submitMsg.style.color = 'red';
       submitMsg.textContent = "Oops! Something went wrong. Please try again.";
     });
   });
 
-  // Upload documents button click opens Google Form link
   uploadBtn.addEventListener('click', () => {
-    const googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSfuTk0YnI4HCgpW4n7oemvsdfStHJpdDUly-D0b3w1LZorkMA/viewform?usp=header"; // <-- Replace with your actual Google Form URL
-    window.open(googleFormURL, '_blank');
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLSfuTk0YnI4HCgpW4n7oemvsdfStHJpdDUly-D0b3w1LZorkMA/viewform?usp=header", '_blank');
   });
 });
 </script>
+
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -460,5 +371,6 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+
 </body>
 </html>
