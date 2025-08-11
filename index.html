@@ -14,7 +14,6 @@
   .hero h1 { background:rgba(0,0,0,0.5); padding:10px; border-radius:8px; }
   footer { background:#0a3d62; color:white; text-align:center; padding:20px; position: relative; z-index: 1; }
 
-  /* Services Section */
   .services {
     max-width: 1100px;
     margin: 40px auto;
@@ -29,7 +28,6 @@
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     text-align: center;
-    position: relative;
   }
   .service-icon {
     background: #1e2f66;
@@ -54,10 +52,9 @@
     color: #444;
   }
 
-  /* Marquee container for flags and names */
   .flags-marquee-wrapper {
     position: fixed;
-    bottom: 60px;  /* just above footer */
+    bottom: 60px;
     left: 0;
     width: 100%;
     background: #e0f0ff;
@@ -81,19 +78,12 @@
   }
   .flags-marquee span {
     white-space: nowrap;
-    cursor: default;
   }
-  
   @keyframes marquee {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
   }
 
-  /* Enquiry Form Section */
   #enquiry-form-section {
     max-width: 400px;
     margin: 40px auto;
@@ -120,7 +110,6 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
   }
   #enquiry-form-section textarea {
     resize: vertical;
@@ -150,11 +139,7 @@
   }
 </style>
 
-<!-- Font Awesome CDN for icons -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 </head>
 <body>
@@ -175,143 +160,98 @@
   <h1>Study Abroad with Confidence</h1>
 </section>
 
-<!-- Services Section -->
-<section class="services" aria-label="Our Services">
+<section class="services">
   <article class="service-card">
-    <div class="service-icon"><i class="fas fa-university" aria-hidden="true"></i></div>
+    <div class="service-icon"><i class="fas fa-university"></i></div>
     <h3 class="service-title">Right Course In The Right University</h3>
-    <p class="service-desc">
-      We provide in-depth information about the universities, institutes and courses offered based on students academics and their interests.
-    </p>
+    <p class="service-desc">We provide in-depth information about universities and courses based on student academics and interests.</p>
   </article>
-
   <article class="service-card">
-    <div class="service-icon"><i class="fas fa-stethoscope" aria-hidden="true"></i></div>
+    <div class="service-icon"><i class="fas fa-stethoscope"></i></div>
     <h3 class="service-title">Career Counseling</h3>
-    <p class="service-desc">
-      At Ayansh Overseas Consultancy, we believe in understating and assessing students personal requirements hence provide best career counseling to the students to succeed.
-    </p>
+    <p class="service-desc">We understand students’ needs and provide the best career counseling to help them succeed.</p>
   </article>
-
   <article class="service-card">
-    <div class="service-icon"><i class="fas fa-file-alt" aria-hidden="true"></i></div>
+    <div class="service-icon"><i class="fas fa-file-alt"></i></div>
     <h3 class="service-title">Pre Departure Briefings</h3>
-    <p class="service-desc">
-      Ayansh Overseas Consultancy conducts pre-departure sessions for its students. We feel this is one of the most important sessions in the whole process to understand the abroad climate.
-    </p>
+    <p class="service-desc">Our pre-departure sessions help students understand life abroad before they leave.</p>
   </article>
-
   <article class="service-card">
-    <div class="service-icon"><i class="fas fa-plane" aria-hidden="true"></i></div>
+    <div class="service-icon"><i class="fas fa-plane"></i></div>
     <h3 class="service-title">Travel Assistance</h3>
-    <p class="service-desc">
-      We also assist students with the booking of flights well in advance for ideal departure dates, convenient routes and avail the discounts.
-    </p>
+    <p class="service-desc">We help with flight bookings for ideal departure dates, convenient routes, and discounts.</p>
   </article>
-
   <article class="service-card">
-    <div class="service-icon"><i class="fas fa-id-card" aria-hidden="true"></i></div>
+    <div class="service-icon"><i class="fas fa-id-card"></i></div>
     <h3 class="service-title">Visa Assistance</h3>
-    <p class="service-desc">
-      Assistance right from filling up application forms, guiding through the required docs, procedures and also to plan and prepare for finances.
-    </p>
+    <p class="service-desc">We assist with application forms, documentation, procedures, and financial planning.</p>
   </article>
-
   <article class="service-card">
-    <div class="service-icon"><i class="fas fa-bed" aria-hidden="true"></i></div>
+    <div class="service-icon"><i class="fas fa-bed"></i></div>
     <h3 class="service-title">Accommodation Assistance</h3>
-    <p class="service-desc">
-      Our counselors guide and assist students with the types of available accommodations that fit into their needs &amp; budget so that the parents are rest assured about their child's safety.
-    </p>
+    <p class="service-desc">We guide students on safe and budget-friendly accommodation options.</p>
   </article>
 </section>
 
-<!-- Enquiry Form Section -->
-<section id="enquiry-form-section" aria-label="Enquiry Form">
+<section id="enquiry-form-section">
   <h2>Enquiry Form</h2>
   <form id="enquiryForm" novalidate>
     <label for="name">Name</label>
     <input id="name" name="name" type="text" required />
-
     <label for="email">Email</label>
     <input id="email" name="email" type="email" required />
-
     <label for="phone">Phone</label>
     <input id="phone" name="phone" type="tel" required />
-
     <label for="city">City</label>
     <input id="city" name="city" type="text" required />
-
     <label for="destination">Destination</label>
     <select id="destination" name="destination" required>
       <option value="">Select Country</option>
-      <option value="United States">United States</option>
-      <option value="United Kingdom">United Kingdom</option>
-      <option value="Canada">Canada</option>
-      <option value="Australia">Australia</option>
-      <option value="New Zealand">New Zealand</option>
-      <option value="Germany">Germany</option>
-      <option value="France">France</option>
-      <option value="Ireland">Ireland</option>
-      <option value="Netherlands">Netherlands</option>
-      <option value="Singapore">Singapore</option>
-      <option value="Switzerland">Switzerland</option>
-      <option value="Japan">Japan</option>
-      <option value="South Korea">South Korea</option>
-      <option value="UAE">United Arab Emirates (UAE)</option>
+      <option>United States</option>
+      <option>United Kingdom</option>
+      <option>Canada</option>
+      <option>Australia</option>
+      <option>New Zealand</option>
+      <option>Germany</option>
+      <option>France</option>
+      <option>Ireland</option>
+      <option>Netherlands</option>
+      <option>Singapore</option>
+      <option>Switzerland</option>
+      <option>Japan</option>
+      <option>South Korea</option>
+      <option>UAE</option>
     </select>
-
     <label for="visaType">Visa Type</label>
     <select id="visaType" name="visaType" required>
       <option value="">Select Visa Type</option>
-      <option value="Student Visa">Student Visa</option>
-      <option value="Work Visa">Work Visa</option>
-      <option value="Tourist Visa">Tourist Visa</option>
-      <option value="Dependent Visa">Dependent Visa</option>
-      <option value="Permanent Residency">Permanent Residency</option>
-      <option value="Business Visa">Business Visa</option>
-      <option value="Exchange Visitor Visa">Exchange Visitor Visa</option>
-      <option value="Temporary Resident Visa">Temporary Resident Visa</option>
+      <option>Student Visa</option>
+      <option>Work Visa</option>
+      <option>Tourist Visa</option>
+      <option>Dependent Visa</option>
+      <option>Permanent Residency</option>
+      <option>Business Visa</option>
+      <option>Exchange Visitor Visa</option>
+      <option>Temporary Resident Visa</option>
     </select>
-
     <label for="message">Message</label>
-    <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
-
+    <textarea id="message" name="message" rows="4" required></textarea>
     <button type="submit">Submit</button>
   </form>
-
-  <button id="upload-btn" type="button" aria-label="Upload your documents">Upload Documents</button>
-
-  <div id="submit-msg" role="alert" aria-live="polite"></div>
+  <button id="upload-btn" type="button">Upload Documents</button>
+  <div id="submit-msg"></div>
 </section>
 
-<!-- Marquee with scrolling country names -->
-<div class="flags-marquee-wrapper" aria-label="Scrolling country names">
-  <div class="flags-marquee" aria-hidden="true" aria-live="off" aria-atomic="true" role="presentation">
-    <span title="United States">United States</span>
-    <span title="United Kingdom">United Kingdom</span>
-    <span title="Canada">Canada</span>
-    <span title="Australia">Australia</span>
-    <span title="New Zealand">New Zealand</span>
-    <span title="Germany">Germany</span>
-    <span title="France">France</span>
-    <span title="Ireland">Ireland</span>
-    <span title="Netherlands">Netherlands</span>
-    <span title="Singapore">Singapore</span>
-    <span title="Switzerland">Switzerland</span>
-
-    <!-- Repeat once more for smooth infinite scrolling -->
-    <span title="United States">United States</span>
-    <span title="United Kingdom">United Kingdom</span>
-    <span title="Canada">Canada</span>
-    <span title="Australia">Australia</span>
-    <span title="New Zealand">New Zealand</span>
-    <span title="Germany">Germany</span>
-    <span title="France">France</span>
-    <span title="Ireland">Ireland</span>
-    <span title="Netherlands">Netherlands</span>
-    <span title="Singapore">Singapore</span>
-    <span title="Switzerland">Switzerland</span>
+<div class="flags-marquee-wrapper">
+  <div class="flags-marquee">
+    <span>United States</span><span>United Kingdom</span><span>Canada</span>
+    <span>Australia</span><span>New Zealand</span><span>Germany</span>
+    <span>France</span><span>Ireland</span><span>Netherlands</span>
+    <span>Singapore</span><span>Switzerland</span>
+    <span>United States</span><span>United Kingdom</span><span>Canada</span>
+    <span>Australia</span><span>New Zealand</span><span>Germany</span>
+    <span>France</span><span>Ireland</span><span>Netherlands</span>
+    <span>Singapore</span><span>Switzerland</span>
   </div>
 </div>
 
@@ -333,32 +273,31 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    submitMsg.style.color = 'green';
+    submitMsg.textContent = "Thank you! We will get back to you as soon as possible.";
+
     const data = new URLSearchParams(new FormData(form)).toString();
 
     fetch("https://script.google.com/macros/s/AKfycbxTUXzp87NBcUbLLsSzd3lavJyt67RogcZmpn9dbEfEAy0QEPlg6fgNEJgQxunia9D8/exec", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: data
-    })
-    .then(res => res.text())
-    .then(txt => {
-      submitMsg.style.color = 'green';
-      submitMsg.textContent = "Thank you! We will get back to you as soon as possible.";
-      form.reset();
-    })
-    .catch(err => {
-      submitMsg.style.color = 'red';
-      submitMsg.textContent = "Oops! Something went wrong. Please try again.";
-    });
+    }).catch(err => console.error("Form submission error:", err));
+
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 2000);
   });
 
   uploadBtn.addEventListener('click', () => {
-    window.open("https://docs.google.com/forms/d/e/1FAIpQLSfuTk0YnI4HCgpW4n7oemvsdfStHJpdDUly-D0b3w1LZorkMA/viewform?usp=header", '_blank');
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSfuTk0YnI4HCgpW4n7oemvsdfStHJpdDUly-D0b3w1LZorkMA/viewform?usp=header",
+      '_blank'
+    );
   });
 });
 </script>
 
-<!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -370,7 +309,6 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!--End of Tawk.to Script-->
 
 </body>
 </html>
