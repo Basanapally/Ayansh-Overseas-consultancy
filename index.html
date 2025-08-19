@@ -3,12 +3,13 @@
 <head>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17471994787"></script>
-<script>
+<script>     
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-17471994787');
 </script>
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ayansh Overseas Consultancy</title>
@@ -17,29 +18,62 @@
 <style>
 body { margin:0; font-family:Arial, sans-serif; background:#f9f9f9; color:#222; }
 
-header {
-  background:#0a3d62;
-  color:#fff;
-  padding:15px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-}
-header img { height: 100px; }
+/* Header */
+header { background:#0a3d62; color:#fff; padding:15px 20px; display:flex; align-items:center; justify-content:center; gap:15px; }
+header img { height:100px; }
 header div { text-align:left; }
 
+/* Navigation */
 nav { display:flex; justify-content:center; background:#1e6091; flex-wrap:wrap; }
 nav a { color:#fff; padding:14px 20px; text-decoration:none; font-weight:bold; transition:0.3s; }
 nav a:hover { background:#0a3d62; transform:scale(1.05); }
 
-.hero {
+/* Hero + CTA */
+#hero-cta {
   background:url('background image.png') no-repeat center/cover;
-  height:400px; display:flex; flex-direction:column; align-items:center; justify-content:center;
-  color:white; text-align:center; padding:20px;
+  height:500px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  text-align:center;
+  position:relative;
 }
-.hero h1 { background:rgba(0,0,0,0.5); padding:10px; border-radius:8px; }
+#hero-cta .overlay {
+  position:absolute;
+  top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,0.5);
+  border-radius:10px;
+}
+#hero-cta .content {
+  position:relative;
+  z-index:1;
+  max-width:700px;
+  padding:20px;
+}
+#hero-cta h1 { font-size:2.5rem; margin-bottom:20px; }
+#hero-cta p { font-size:1.2rem; margin-bottom:30px; }
 
+/* CTA Buttons - Both same style */
+.cta-button {
+  padding:15px 30px;
+  font-weight:bold;
+  font-size:1.2rem;
+  border-radius:8px;
+  text-decoration:none;
+  margin-right:15px;
+  color:#000;
+  background:#28FF7F; /* neon green */
+  box-shadow: 0 5px 15px rgba(40,255,127,0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.cta-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(40,255,127,0.8);
+}
+
+/* WhatsApp Button */
 .whatsapp-fixed-icon {
   position: fixed; top: 50%; left: 15px;
   transform: translateY(-50%);
@@ -51,18 +85,7 @@ nav a:hover { background:#0a3d62; transform:scale(1.05); }
 .whatsapp-fixed-icon:hover { background:#20b954; transform: translateY(-50%) scale(1.1); }
 .whatsapp-fixed-icon i { font-size:28px; }
 
-.flags-marquee-wrapper {
-  position: fixed; bottom: 60px; left: 0; width: 100%; background:#e0f0ff;
-  overflow:hidden; height:50px; border-top:2px solid #0a3d62; border-bottom:2px solid #0a3d62;
-  z-index:9999; display:flex; align-items:center;
-}
-.flags-marquee {
-  display:flex; gap:50px; padding-left:100%; animation:marquee 20s linear infinite;
-  font-size:1.4rem; font-weight:600; color:#0a3d62; user-select:none;
-}
-.flags-marquee span { white-space:nowrap; }
-@keyframes marquee { 0% { transform:translateX(0%);} 100% { transform:translateX(-100%);} }
-
+/* Services */
 .services {
   max-width: 1100px; margin:40px auto; display:grid;
   grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:30px; padding:0 20px;
@@ -78,14 +101,11 @@ nav a:hover { background:#0a3d62; transform:scale(1.05); }
   font-size:32px; transition:0.3s;
 }
 .service-card:hover .service-icon { background:#0a3d62; transform:scale(1.2); }
-.service-title {
-  font-weight:700; margin-bottom:15px; font-size:1.3rem; color:#0a3d62; position:relative;
-}
-.service-title::after {
-  content:""; display:block; width:50px; height:3px; background:#27ae60; margin:8px auto 0; border-radius:2px;
-}
+.service-title { font-weight:700; margin-bottom:15px; font-size:1.3rem; color:#0a3d62; position:relative; }
+.service-title::after { content:""; display:block; width:50px; height:3px; background:#27ae60; margin:8px auto 0; border-radius:2px; }
 .service-desc { font-size:14px; line-height:1.6; color:#444; }
 
+/* Enquiry Form */
 #enquiry-form-section {
   max-width:400px; margin:40px auto; padding:20px;
   background:white; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);
@@ -96,17 +116,49 @@ nav a:hover { background:#0a3d62; transform:scale(1.05); }
 #enquiry-form-section textarea { resize: vertical; }
 #enquiry-form-section button[type="submit"], #upload-btn {
   width:100%; padding:12px; border:none; border-radius:4px; font-weight:bold; cursor:pointer; margin-top:10px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-#enquiry-form-section button[type="submit"] { background:#0a3d62; color:white; }
-#upload-btn { background:#27ae60; color:white; }
-#upload-btn:hover { background:#219150; }
+/* Neon form buttons */
+#enquiry-form-section button[type="submit"] { 
+  background:#28FF7F; 
+  color:#000; 
+  box-shadow: 0 5px 15px rgba(40,255,127,0.6);
+}
+#enquiry-form-section button[type="submit"]:hover { 
+  transform: scale(1.05); 
+  box-shadow: 0 8px 25px rgba(40,255,127,0.8);
+}
+#upload-btn { 
+  background:#FF6F1F; 
+  color:#fff; 
+  box-shadow: 0 5px 15px rgba(255,111,31,0.6);
+}
+#upload-btn:hover { 
+  transform: scale(1.05); 
+  box-shadow: 0 8px 25px rgba(255,111,31,0.8);
+}
 #submit-msg { margin-top:15px; text-align:center; font-weight:bold; }
 
+/* Flags Marquee */
+.flags-marquee-wrapper {
+  position: fixed; bottom: 60px; left: 0; width: 100%; background:#e0f0ff;
+  overflow:hidden; height:50px; border-top:2px solid #0a3d62; border-bottom:2px solid #0a3d62;
+  z-index:9999; display:flex; align-items:center;
+}
+.flags-marquee { display:flex; gap:50px; padding-left:100%; animation:marquee 20s linear infinite; font-size:1.4rem; font-weight:600; color:#0a3d62; user-select:none; }
+.flags-marquee span { white-space:nowrap; }
+@keyframes marquee { 0% { transform:translateX(0%);} 100% { transform:translateX(-100%);} }
+
+/* Footer */
 footer { background:#0a3d62; color:white; text-align:center; padding:20px; margin-top:50px; }
 
+/* Responsive */
 @media (max-width:600px){
   header h1 { font-size:1.8rem; }
   header p { font-size:1rem; }
+  #hero-cta h1 { font-size:1.8rem; }
+  #hero-cta p { font-size:1rem; }
+  #hero-cta a { font-size:1rem; padding:12px 25px; margin-right:10px; }
   .service-title { font-size:1.1rem; }
   .service-icon { width:60px; height:60px; font-size:26px; }
 }
@@ -114,7 +166,7 @@ footer { background:#0a3d62; color:white; text-align:center; padding:20px; margi
 </head>
 <body>
 
-<!-- WhatsApp icon fixed top-left -->
+<!-- WhatsApp icon -->
 <a href="https://wa.me/447366656656" target="_blank" class="whatsapp-fixed-icon"><i class="fab fa-whatsapp"></i></a>
 
 <header>
@@ -132,30 +184,29 @@ footer { background:#0a3d62; color:white; text-align:center; padding:20px; margi
   <a href="contact.html">ContactUs</a>
 </nav>
 
-<section class="hero">
-  <h1>Study Abroad with Confidence</h1>
+<!-- Hero + CTA -->
+<section id="hero-cta">
+  <div class="overlay"></div>
+  <div class="content">
+    <h1>Study Abroad with Confidence!</h1>
+    <p>Register for our Free Webinar Today – Limited Slots!</p>
+    <!-- Both buttons same design -->
+    <a href="https://forms.gle/PJskm8HQk1FFkqTF8" target="_blank" class="cta-button">Book Free Consultation</a>
+    <a href="https://forms.gle/PJskm8HQk1FFkqTF8" target="_blank" class="cta-button">Register Webinar</a>
+  </div>
 </section>
 
-<!-- Combined Services Grid -->
+<!-- Services -->
 <section class="services">
-  <!-- Original Services -->
   <div class="service-card"><div class="service-icon"><i class="fas fa-university"></i></div><h3 class="service-title">Right Course In The Right University</h3><p class="service-desc">We provide in-depth information about universities and courses based on student academics and interests.</p></div>
   <div class="service-card"><div class="service-icon"><i class="fas fa-stethoscope"></i></div><h3 class="service-title">Career Counseling</h3><p class="service-desc">We understand students’ needs and provide the best career counseling to help them succeed.</p></div>
   <div class="service-card"><div class="service-icon"><i class="fas fa-file-alt"></i></div><h3 class="service-title">Pre Departure Briefings</h3><p class="service-desc">Our pre-departure sessions help students understand life abroad before they leave.</p></div>
   <div class="service-card"><div class="service-icon"><i class="fas fa-plane"></i></div><h3 class="service-title">Travel Assistance</h3><p class="service-desc">We help with flight bookings for ideal departure dates, convenient routes, and discounts.</p></div>
   <div class="service-card"><div class="service-icon"><i class="fas fa-id-card"></i></div><h3 class="service-title">Visa Assistance</h3><p class="service-desc">We assist with application forms, documentation, procedures, and financial planning.</p></div>
   <div class="service-card"><div class="service-icon"><i class="fas fa-bed"></i></div><h3 class="service-title">Accommodation Assistance</h3><p class="service-desc">We guide students on safe and budget-friendly accommodation options.</p></div>
-
-  <!-- Visa & Additional Services -->
-  <div class="service-card"><div class="service-icon"><i class="fas fa-user-graduate"></i></div><h3 class="service-title">Student Visa Assistance</h3><p class="service-desc">We provide complete guidance for applying and processing student visas smoothly.</p></div>
-  <div class="service-card"><div class="service-icon"><i class="fas fa-briefcase"></i></div><h3 class="service-title">PSW Visa Assistance</h3><p class="service-desc">Helping students transition to work visas after graduation with PSW guidance.</p></div>
-  <div class="service-card"><div class="service-icon"><i class="fas fa-id-card"></i></div><h3 class="service-title">ILR Assistance</h3><p class="service-desc">Assisting long-term residents in applying for Indefinite Leave to Remain (ILR).</p></div>
-  <div class="service-card"><div class="service-icon"><i class="fas fa-file-alt"></i></div><h3 class="service-title">FLR Visa Assistance</h3><p class="service-desc">We help applicants apply for Family Leave to Remain (FLR) visas efficiently.</p></div>
-  <div class="service-card"><div class="service-icon"><i class="fas fa-hand-holding-usd"></i></div><h3 class="service-title">Work Visa Guidance</h3><p class="service-desc">Providing guidance for obtaining work visas, eligibility, and documentation support.</p></div>
-  <div class="service-card"><div class="service-icon"><i class="fas fa-plane"></i></div><h3 class="service-title">Tourist Visa Assistance</h3><p class="service-desc">Supporting applicants with tourist visa applications for smooth travel planning.</p></div>
 </section>
 
-<!-- Enquiry Form Section -->
+<!-- Enquiry Form -->
 <section id="enquiry-form-section">
   <h2>Book Free Consultation</h2>
   <form id="enquiryForm" novalidate>
@@ -196,10 +247,12 @@ footer { background:#0a3d62; color:white; text-align:center; padding:20px; margi
   </div>
 </div>
 
+<!-- Footer -->
 <footer>
   <p>© 2025 Ayansh Overseas Consultancy</p>
 </footer>
 
+<!-- Scripts -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('enquiryForm');
@@ -218,7 +271,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(()=>{ window.location.href="index.html"; },2000);
   });
 
-  uploadBtn.addEventListener('click', ()=>{ window.open("https://docs.google.com/forms/d/e/1FAIpQLSfuTk0YnI4HCgpW4n7oemvsdfStHJpdDUly-D0b3w1LZorkMA/viewform?usp=header",'_blank'); });
+  uploadBtn.addEventListener('click', ()=>{ 
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLSfuTk0YnI4HCgpW4n7oemvsdfStHJpdDUly-D0b3w1LZorkMA/viewform?usp=header",'_blank'); 
+  });
 });
 </script>
 
