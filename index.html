@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ayansh Overseas Consultancy</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<!-- Google Tag -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17471994787"></script>
 <script>     
   window.dataLayer = window.dataLayer || [];
@@ -9,11 +14,6 @@
   gtag('js', new Date());
   gtag('config', 'AW-17471994787');
 </script>
-
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ayansh Overseas Consultancy</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 <style>
 body { margin:0; font-family:Arial, sans-serif; background:#f9f9f9; color:#222; }
@@ -55,18 +55,19 @@ nav a:hover { background:#0a3d62; transform:scale(1.05); }
 #hero-cta h1 { font-size:2.5rem; margin-bottom:20px; }
 #hero-cta p { font-size:1.2rem; margin-bottom:30px; }
 
-/* CTA Buttons - Both same style */
+/* CTA Buttons */
 .cta-button {
   padding:15px 30px;
   font-weight:bold;
   font-size:1.2rem;
   border-radius:8px;
   text-decoration:none;
-  margin-right:15px;
+  margin:0 10px;
   color:#000;
   background:#28FF7F; /* neon green */
   box-shadow: 0 5px 15px rgba(40,255,127,0.6);
   transition: transform 0.3s, box-shadow 0.3s;
+  display:inline-block;
 }
 .cta-button:hover {
   transform: scale(1.1);
@@ -158,7 +159,7 @@ footer { background:#0a3d62; color:white; text-align:center; padding:20px; margi
   header p { font-size:1rem; }
   #hero-cta h1 { font-size:1.8rem; }
   #hero-cta p { font-size:1rem; }
-  #hero-cta a { font-size:1rem; padding:12px 25px; margin-right:10px; }
+  #hero-cta a.cta-button { display:block; width:80%; margin:10px auto; text-align:center; }
   .service-title { font-size:1.1rem; }
   .service-icon { width:60px; height:60px; font-size:26px; }
 }
@@ -181,17 +182,16 @@ footer { background:#0a3d62; color:white; text-align:center; padding:20px; margi
   <a href="index.html">Home</a>
   <a href="services.html">Services</a>
   <a href="about.html">About Us</a>
-  <a href="contact.html">ContactUs</a>
+  <a href="contact.html">Contact Us</a>
 </nav>
 
-<!-- Hero + CTA -->
+<!-- Hero CTA -->
 <section id="hero-cta">
   <div class="overlay"></div>
   <div class="content">
     <h1>Study Abroad with Confidence!</h1>
-    <p>Register for our Free Webinar Today – Limited Slots!</p>
-    <!-- Both buttons same design -->
-    <a href="https://forms.gle/PJskm8HQk1FFkqTF8" target="_blank" class="cta-button">Book Free Consultation</a>
+    <p>Take Action Today – Limited Slots!</p>
+    <a href="#enquiry-form-section" class="cta-button">Book Free Consultation</a>
     <a href="https://forms.gle/PJskm8HQk1FFkqTF8" target="_blank" class="cta-button">Register Webinar</a>
   </div>
 </section>
