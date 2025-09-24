@@ -1,187 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Global site tag (gtag.js) - Google Ads -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17557585086"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17557585086');
-</script>
-
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ayansh Overseas Consultancy</title>
+
+<title>Ayansh Overseas Consultancy – Study Abroad Services</title>
+<meta name="description" content="Ayansh Overseas Consultancy helps students choose the right course and university abroad. Free counselling, visa assistance, and travel support.">
+<meta name="keywords" content="study abroad, overseas education, student visa, Ayansh Overseas Consultancy">
+
+<!-- Preconnect to speed third-party scripts -->
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://embed.tawk.to">
+
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-<!-- Google Tag -->
+<!-- Google Tag (async & deferred to reduce blocking) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17471994787"></script>
-<script>     
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-17471994787');
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-17471994787');
 </script>
 
 <style>
-body { margin:0; font-family:Arial, sans-serif; background:#f9f9f9; color:#222; }
+/* General */
+body {margin:0;font-family:Arial, sans-serif;background:#f9f9f9;color:#222;}
 
 /* Header */
-header { background:#0a3d62; color:#fff; padding:15px 20px; display:flex; align-items:center; justify-content:center; gap:15px; }
-header img { height:100px; }
-header div { text-align:left; }
+header{background:#0a3d62;color:#fff;padding:15px 20px;display:flex;align-items:center;justify-content:center;gap:15px;}
+header img{height:100px;width:auto;}
+header div{text-align:left;}
 
 /* Navigation */
-nav { display:flex; justify-content:center; background:#1e6091; flex-wrap:wrap; }
-nav a { color:#fff; padding:14px 20px; text-decoration:none; font-weight:bold; transition:0.3s; }
-nav a:hover { background:#0a3d62; transform:scale(1.05); }
+nav{display:flex;justify-content:center;background:#1e6091;flex-wrap:wrap;}
+nav a{color:#fff;padding:14px 20px;text-decoration:none;font-weight:bold;transition:0.3s;}
+nav a:hover{background:#0a3d62;transform:scale(1.05);}
 
-/* Hero + CTA */
-#hero-cta {
-  background:url('background image.png') no-repeat center/cover;
-  height:500px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  color:white;
-  text-align:center;
-  position:relative;
+/* Hero */
+#hero-cta{
+  background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+             url('background image.png') no-repeat center/cover;
+  min-height:500px;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  color:#fff;text-align:center;padding:20px;
 }
-#hero-cta .overlay {
-  position:absolute;
-  top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,0.5);
-  border-radius:10px;
-}
-#hero-cta .content {
-  position:relative;
-  z-index:1;
-  max-width:700px;
-  padding:20px;
-}
-#hero-cta h1 { font-size:2.5rem; margin-bottom:20px; }
-#hero-cta p { font-size:1.2rem; margin-bottom:30px; }
+#hero-cta h1{font-size:2.5rem;margin-bottom:20px;}
+#hero-cta p{font-size:1.2rem;margin-bottom:30px;}
 
-/* CTA Buttons */
-.cta-button {
-  padding:15px 30px;
-  font-weight:bold;
-  font-size:1.2rem;
-  border-radius:8px;
-  text-decoration:none;
-  margin: 30px; 30px;
-  color:#000;
-  background:#28FF7F; /* neon green */
-  box-shadow: 0 5px 15px rgba(40,255,127,0.6);
-  transition: transform 0.3s, box-shadow 0.3s;
+/* CTA */
+.cta-button{
+  padding:15px 30px;font-weight:bold;font-size:1.2rem;border-radius:8px;text-decoration:none;
+  margin:20px;color:#000;background:#28FF7F;
+  box-shadow:0 5px 15px rgba(40,255,127,0.6);
+  transition:transform 0.3s, box-shadow 0.3s;
   display:inline-block;
 }
-.cta-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 25px rgba(40,255,127,0.8);
-}
+.cta-button:hover{transform:scale(1.1);box-shadow:0 8px 25px rgba(40,255,127,0.8);}
 
-/* WhatsApp Button */
-.whatsapp-fixed-icon {
-  position: fixed; top: 50%; left: 15px;
-  transform: translateY(-50%);
-  background:#25D366; color:white; width:50px; height:50px; border-radius:50%;
-  display:flex; justify-content:center; align-items:center;
-  box-shadow:0 2px 8px rgba(0,0,0,0.3); z-index:10000; cursor:pointer;
-  transition:0.3s;
+/* WhatsApp */
+.whatsapp-fixed-icon{
+  position:fixed;top:50%;left:15px;
+  transform:translateY(-50%);
+  background:#25D366;color:white;width:50px;height:50px;border-radius:50%;
+  display:flex;justify-content:center;align-items:center;
+  box-shadow:0 2px 8px rgba(0,0,0,0.3);z-index:10000;cursor:pointer;transition:0.3s;
 }
-.whatsapp-fixed-icon:hover { background:#20b954; transform: translateY(-50%) scale(1.1); }
-.whatsapp-fixed-icon i { font-size:28px; }
+.whatsapp-fixed-icon:hover{background:#20b954;transform:translateY(-50%) scale(1.1);}
+.whatsapp-fixed-icon i{font-size:28px;}
 
 /* Services */
-.services {
-  max-width: 1100px; margin:40px auto; display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:30px; padding:0 20px;
-}
-.service-card {
-  background:white; padding:30px 20px; border-radius:12px; text-align:center;
-  box-shadow:0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;
-}
-.service-card:hover { transform: translateY(-10px); box-shadow:0 8px 25px rgba(0,0,0,0.15); }
-.service-icon {
-  background:#1e2f66; width:70px; height:70px; margin:0 auto 20px;
-  border-radius:50%; color:white; display:flex; align-items:center; justify-content:center;
-  font-size:32px; transition:0.3s;
-}
-.service-card:hover .service-icon { background:#0a3d62; transform:scale(1.2); }
-.service-title { font-weight:700; margin-bottom:15px; font-size:1.3rem; color:#0a3d62; position:relative; }
-.service-title::after { content:""; display:block; width:50px; height:3px; background:#27ae60; margin:8px auto 0; border-radius:2px; }
-.service-desc { font-size:14px; line-height:1.6; color:#444; }
+.services{max-width:1100px;margin:40px auto;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;padding:0 20px;}
+.service-card{background:#fff;padding:30px 20px;border-radius:12px;text-align:center;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);transition:transform 0.3s, box-shadow 0.3s;}
+.service-card:hover{transform:translateY(-10px);box-shadow:0 8px 25px rgba(0,0,0,0.15);}
+.service-icon{background:#1e2f66;width:70px;height:70px;margin:0 auto 20px;
+  border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:32px;transition:0.3s;}
+.service-card:hover .service-icon{background:#0a3d62;transform:scale(1.2);}
+.service-title{font-weight:700;margin-bottom:15px;font-size:1.3rem;color:#0a3d62;}
+.service-title::after{content:"";display:block;width:50px;height:3px;background:#27ae60;margin:8px auto 0;border-radius:2px;}
+.service-desc{font-size:14px;line-height:1.6;color:#444;}
 
-/* Enquiry Form */
-#enquiry-form-section {
-  max-width:400px; margin:40px auto; padding:20px;
-  background:white; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);
+/* Form */
+#enquiry-form-section{max-width:400px;margin:40px auto;padding:20px;background:#fff;
+  border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+#enquiry-form-section h2{text-align:center;color:#0a3d62;}
+#enquiry-form-section label{display:block;margin:10px 0 5px;}
+#enquiry-form-section input,select,textarea{
+  width:100%;padding:8px;margin-bottom:12px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box;
 }
-#enquiry-form-section h2 { text-align:center; color:#0a3d62; }
-#enquiry-form-section label { display:block; margin:10px 0 5px; }
-#enquiry-form-section input, select, textarea { width:100%; padding:8px; margin-bottom:12px; border:1px solid #ccc; border-radius:4px; box-sizing:border-box; }
-#enquiry-form-section textarea { resize: vertical; }
-#enquiry-form-section button[type="submit"], #upload-btn {
-  width:100%; padding:12px; border:none; border-radius:4px; font-weight:bold; cursor:pointer; margin-top:10px;
-  transition: transform 0.3s, box-shadow 0.3s;
+#enquiry-form-section textarea{resize:vertical;}
+#enquiry-form-section button[type="submit"],#upload-btn{
+  width:100%;padding:12px;border:none;border-radius:4px;font-weight:bold;cursor:pointer;margin-top:10px;
+  transition:transform 0.3s, box-shadow 0.3s;
 }
-/* Neon form buttons */
-#enquiry-form-section button[type="submit"] { 
-  background:#28FF7F; 
-  color:#000; 
-  box-shadow: 0 5px 15px rgba(40,255,127,0.6);
-}
-#enquiry-form-section button[type="submit"]:hover { 
-  transform: scale(1.05); 
-  box-shadow: 0 8px 25px rgba(40,255,127,0.8);
-}
-#upload-btn { 
-  background:#FF6F1F; 
-  color:#fff; 
-  box-shadow: 0 5px 15px rgba(255,111,31,0.6);
-}
-#upload-btn:hover { 
-  transform: scale(1.05); 
-  box-shadow: 0 8px 25px rgba(255,111,31,0.8);
-}
-#submit-msg { margin-top:15px; text-align:center; font-weight:bold; }
-
-/* Flags Marquee */
-.flags-marquee-wrapper {
-  position: fixed; bottom: 60px; left: 0; width: 100%; background:#e0f0ff;
-  overflow:hidden; height:50px; border-top:2px solid #0a3d62; border-bottom:2px solid #0a3d62;
-  z-index:9999; display:flex; align-items:center;
-}
-.flags-marquee { display:flex; gap:50px; padding-left:100%; animation:marquee 20s linear infinite; font-size:1.4rem; font-weight:600; color:#0a3d62; user-select:none; }
-.flags-marquee span { white-space:nowrap; }
-@keyframes marquee { 0% { transform:translateX(0%);} 100% { transform:translateX(-100%);} }
+#enquiry-form-section button[type="submit"]{background:#28FF7F;color:#000;box-shadow:0 5px 15px rgba(40,255,127,0.6);}
+#enquiry-form-section button[type="submit"]:hover{transform:scale(1.05);box-shadow:0 8px 25px rgba(40,255,127,0.8);}
+#upload-btn{background:#FF6F1F;color:#fff;box-shadow:0 5px 15px rgba(255,111,31,0.6);}
+#upload-btn:hover{transform:scale(1.05);box-shadow:0 8px 25px rgba(255,111,31,0.8);}
+#submit-msg{margin-top:15px;text-align:center;font-weight:bold;}
 
 /* Footer */
-footer { background:#0a3d62; color:white; text-align:center; padding:20px; margin-top:50px; }
+footer{background:#0a3d62;color:white;text-align:center;padding:20px;margin-top:50px;}
 
 /* Responsive */
-@media (max-width:600px){
-  header h1 { font-size:1.8rem; }
-  header p { font-size:1rem; }
-  #hero-cta h1 { font-size:1.8rem; }
-  #hero-cta p { font-size:1rem; }
-  #hero-cta a.cta-button { display:block; width:80%; margin:10px auto; text-align:center; }
-  .service-title { font-size:1.1rem; }
-  .service-icon { width:60px; height:60px; font-size:26px; }
+@media(max-width:600px){
+  #hero-cta h1{font-size:1.8rem;}
+  #hero-cta p{font-size:1rem;}
+  .service-title{font-size:1.1rem;}
 }
 </style>
 </head>
 <body>
 
 <!-- WhatsApp icon -->
-<a href="https://wa.me/447366656656" target="_blank" class="whatsapp-fixed-icon"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/447366656656" target="_blank" class="whatsapp-fixed-icon" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
 <header>
-  <img src="AOClogo.png" alt="Ayansh Overseas Consultancy Logo" />
+  <img src="AOClogo.png" width="200" height="100" alt="Ayansh Overseas Consultancy Logo" loading="lazy">
   <div>
     <h1>Ayansh Overseas Consultancy</h1>
     <p>Your Trusted Partner for Global Education</p>
@@ -195,107 +134,101 @@ footer { background:#0a3d62; color:white; text-align:center; padding:20px; margi
   <a href="contact.html">Contact Us</a>
 </nav>
 
-<!-- Hero CTA -->
 <section id="hero-cta">
-  <div class="overlay"></div>
-  <div class="content">
-    <h1>Study Abroad with Confidence!</h1>
-    
-    <a href="#enquiry-form-section" class="cta-button">Book Free Consultation</a>
-   
-  </div>
+  <h1>Study Abroad with Confidence!</h1>
+  <p>Get free counselling, visa guidance and complete overseas education support.</p>
+  <a href="#enquiry-form-section" class="cta-button">Book Free Consultation</a>
 </section>
 
 <!-- Services -->
 <section class="services">
-  <div class="service-card"><div class="service-icon"><i class="fas fa-university"></i></div><h3 class="service-title">Right Course In The Right University</h3><p class="service-desc">We provide in-depth information about universities and courses based on student academics and interests.</p></div>
-  <div class="service-card"><div class="service-icon"><i class="fas fa-stethoscope"></i></div><h3 class="service-title">Career Counseling</h3><p class="service-desc">We understand students’ needs and provide the best career counseling to help them succeed.</p></div>
-  <div class="service-card"><div class="service-icon"><i class="fas fa-file-alt"></i></div><h3 class="service-title">Pre Departure Briefings</h3><p class="service-desc">Our pre-departure sessions help students understand life abroad before they leave.</p></div>
-  <div class="service-card"><div class="service-icon"><i class="fas fa-plane"></i></div><h3 class="service-title">Travel Assistance</h3><p class="service-desc">We help with flight bookings for ideal departure dates, convenient routes, and discounts.</p></div>
-  <div class="service-card"><div class="service-icon"><i class="fas fa-id-card"></i></div><h3 class="service-title">Visa Assistance</h3><p class="service-desc">We assist with application forms, documentation, procedures, and financial planning.</p></div>
-  <div class="service-card"><div class="service-icon"><i class="fas fa-bed"></i></div><h3 class="service-title">Accommodation Assistance</h3><p class="service-desc">We guide students on safe and budget-friendly accommodation options.</p></div>
+  <div class="service-card"><div class="service-icon"><i class="fas fa-university"></i></div>
+    <h3 class="service-title">Right Course & University</h3>
+    <p class="service-desc">Personalised guidance to select the best course and university based on your goals.</p></div>
+  <div class="service-card"><div class="service-icon"><i class="fas fa-stethoscope"></i></div>
+    <h3 class="service-title">Career Counselling</h3>
+    <p class="service-desc">Professional counselling to help plan your future abroad.</p></div>
+  <div class="service-card"><div class="service-icon"><i class="fas fa-file-alt"></i></div>
+    <h3 class="service-title">Pre-Departure Briefing</h3>
+    <p class="service-desc">Understand lifestyle, culture and essential tips before you travel.</p></div>
+  <div class="service-card"><div class="service-icon"><i class="fas fa-plane"></i></div>
+    <h3 class="service-title">Travel Assistance</h3>
+    <p class="service-desc">Support with flights, insurance and travel documents.</p></div>
+  <div class="service-card"><div class="service-icon"><i class="fas fa-id-card"></i></div>
+    <h3 class="service-title">Visa Assistance</h3>
+    <p class="service-desc">Complete help with visa forms, documentation and financial planning.</p></div>
+  <div class="service-card"><div class="service-icon"><i class="fas fa-bed"></i></div>
+    <h3 class="service-title">Accommodation Help</h3>
+    <p class="service-desc">Safe and budget-friendly housing options in your destination country.</p></div>
 </section>
 
 <!-- Enquiry Form -->
 <section id="enquiry-form-section">
   <h2>Book Free Consultation</h2>
   <form id="enquiryForm" novalidate>
-    <label for="name">Name</label><input id="name" name="name" type="text" required />
-    <label for="email">Email</label><input id="email" name="email" type="email" required />
-    <label for="phone">Phone</label><input id="phone" name="phone" type="tel" required />
-    <label for="city">City</label><input id="city" name="city" type="text" required />
+    <label for="name">Name</label><input id="name" name="name" type="text" required>
+    <label for="email">Email</label><input id="email" name="email" type="email" required>
+    <label for="phone">Phone</label><input id="phone" name="phone" type="tel" required>
+    <label for="city">City</label><input id="city" name="city" type="text" required>
     <label for="destination">Destination</label>
     <select id="destination" name="destination" required>
       <option value="">Select Country</option>
       <option>United States</option><option>United Kingdom</option><option>Canada</option>
       <option>Australia</option><option>New Zealand</option><option>Germany</option>
       <option>France</option><option>Ireland</option><option>Others</option>
-      
     </select>
     <label for="visaType">Visa Type</label>
     <select id="visaType" name="visaType" required>
       <option value="">Select Visa Type</option>
       <option>Student Visa</option><option>Tourist Visa</option>
       <option>Dependent Visa</option><option>Others</option>
-      
     </select>
-    <label for="message">Message</label><textarea id="message" name="message" rows="4" required></textarea>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
     <button type="submit">Submit</button>
   </form>
   <button id="upload-btn" type="button">Upload Documents</button>
   <div id="submit-msg"></div>
 </section>
 
-<!-- Flags Marquee -->
-<div class="flags-marquee-wrapper">
-  <div class="flags-marquee">
-    <span>United States</span><span>United Kingdom</span><span>Canada</span>
-    <span>Australia</span><span>New Zealand</span><span>Germany</span>
-    <span>France</span><span>Ireland</span>
-    
-</div>
-
-<!-- Footer -->
 <footer>
   <p>© 2025 Ayansh Overseas Consultancy</p>
 </footer>
 
-<!-- Scripts -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('enquiryForm');
-  const submitMsg = document.getElementById('submit-msg');
-  const uploadBtn = document.getElementById('upload-btn');
+<!-- Scripts (deferred to avoid blocking) -->
+<script defer>
+document.addEventListener('DOMContentLoaded',()=>{
+ const form=document.getElementById('enquiryForm');
+ const msg=document.getElementById('submit-msg');
+ const upload=document.getElementById('upload-btn');
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (!form.checkValidity()) { form.reportValidity(); return; }
-    submitMsg.style.color = 'green';
-    submitMsg.textContent = "Thank you! We will get back to you as soon as possible.";
-    const data = new URLSearchParams(new FormData(form)).toString();
-    fetch("https://script.google.com/macros/s/AKfycbxTUXzp87NBcUbLLsSzd3lavJyt67RogcZmpn9dbEfEAy0QEPlg6fgNEJgQxunia9D8/exec", {
-      method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: data
-    }).catch(err => console.error(err));
-    setTimeout(()=>{ window.location.href="index.html"; },2000);
-  });
+ form.addEventListener('submit',e=>{
+   e.preventDefault();
+   if(!form.checkValidity()){form.reportValidity();return;}
+   msg.style.color='green';
+   msg.textContent="Thank you! We will contact you soon.";
+   const data=new URLSearchParams(new FormData(form)).toString();
+   fetch("https://script.google.com/macros/s/AKfycbxTUXzp87NBcUbLLsSzd3lavJyt67RogcZmpn9dbEfEAy0QEPlg6fgNEJgQxunia9D8/exec",
+   {method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:data})
+   .catch(console.error);
+   setTimeout(()=>window.location.href="index.html",2000);
+ });
 
-  uploadBtn.addEventListener('click', ()=>{ 
-    window.open("https://docs.google.com/forms/d/e/1FAIpQLSfuTk0YnI4HCgpW4n7oemvsdfStHJpdDUly-D0b3w1LZorkMA/viewform?usp=header",'_blank'); 
-  });
+ upload.addEventListener('click',()=>{
+   window.open("https://docs.google.com/forms/d/e/1FAIpQLSfuTk0YnI4HCgpW4n7oemvsdfStHJpdDUly-D0b3w1LZorkMA/viewform?usp=header","_blank");
+ });
 });
 </script>
 
-<!-- Tawk.to -->
-<script type="text/javascript">
+<!-- Tawk.to live chat -->
+<script defer type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/689d18f6bee2f519237b3c29/1j2iqj116';
-s1.charset='UTF-8'; s1.setAttribute('crossorigin','*'); s0.parentNode.insertBefore(s1,s0);
+ var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+ s1.async=true;
+ s1.src='https://embed.tawk.to/689d18f6bee2f519237b3c29/1j2iqj116';
+ s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-
 </body>
 </html>
-
