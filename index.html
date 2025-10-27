@@ -113,6 +113,58 @@ nav a:hover{background:#0a3d62;transform:scale(1.05);}
 #submit-msg{margin-top:15px;text-align:center;font-weight:bold;}
 
 /* Footer */
+/* Success Stories */
+#success-stories {
+  background: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+#success-stories h2 {
+  font-size: 2rem;
+  color: #0a3d62;
+  margin-bottom: 10px;
+}
+#success-stories .subtitle {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+.stories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.story-card {
+  background: #f8faff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.story-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+.story-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.story-card h3 {
+  color: #1e2f66;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.story-card p {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
 footer{background:#0a3d62;color:white;text-align:center;padding:20px;margin-top:50px;}
 
 /* Responsive */
@@ -122,6 +174,7 @@ footer{background:#0a3d62;color:white;text-align:center;padding:20px;margin-top:
   .service-title{font-size:1.1rem;}
 }
 </style>
+
 </head>
 <body>
 
@@ -201,6 +254,40 @@ footer{background:#0a3d62;color:white;text-align:center;padding:20px;margin-top:
 </section>
 
 <footer>
+  <!-- Success Stories Section -->
+<section id="success-stories">
+  <h2>Our Success Stories</h2>
+  <p class="subtitle">Real journeys, real success — hear from our students who made their dreams come true!</p>
+  
+  <div class="stories">
+    <div class="story-card">
+      
+      <h3>Ravali Akulla – United Kingdom</h3>
+      <p>“Ayansh Overseas helped me get admission to the University of Manchester with full visa guidance. Their counselling was so supportive and clear!”</p>
+    </div>
+
+    <div class="story-card">
+      
+      <h3>Vinay Thangellapelli – United kingdom</h3>
+      <p>“From choosing the right course to getting my study visa approved, everything was smooth and professional. I highly recommend them!”</p>
+    </div>
+
+    <div class="story-card">
+      
+      <h3>Sneha Reddy – Canada</h3>
+      <p>“Thanks to Ayansh Overseas, I’m now pursuing my Master’s in Sydney. They made the process stress-free and easy!”</p>
+    </div>
+
+    <div class="story-card">
+      
+      <h3>Prakash – Canada</h3>
+      <p>“Ayansh Overseas guided me step by step for my UK student visa. Couldn’t have done it without them!”</p>
+    </div>
+
+
+  </div>
+</section>
+
   <p>© 2025 Ayansh Overseas Consultancy</p>
 </footer>
 
@@ -241,5 +328,4 @@ var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 </script>
 </body>
 </html>
-
 
