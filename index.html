@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ayansh Overseas Consultancy | Study Abroad</title>
+
+<meta name="description"
+content="Ayansh Overseas Consultancy helps students study in the UK, Canada, Australia, USA and other destinations. Check your study abroad eligibility online.">
+
+<!-- Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18393259750"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-18393259750');
+</script>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    line-height:1.6;
+    color:#222;
+    background:#f7f9fc;
+}
+
+header{
+    background:#fff;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:12px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    height:65px;
+    width:auto;
+}
+
+nav a{
+    text-decoration:none;
+    color:#222;
+    margin-left:22px;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#0b63ce;
+}
+
+.hero{
+    min-height:560px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:60px 20px;
+    background:
+    linear-gradient(rgba(0,31,80,.75),rgba(0,31,80,.75)),
+    url('background.jpg') center/cover no-repeat;
+    color:white;
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:21px;
+    max-width:750px;
+    margin:auto auto 30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    background:#ffb400;
+    color:#111;
+    text-decoration:none;
+    border-radius:7px;
+    font-weight:bold;
+    border:none;
+    cursor:pointer;
+}
+
+.btn:hover{
+    opacity:.9;
+}
+
+section{
+    padding:70px 20px;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:36px;
+    color:#073b7a;
+}
+
+.section-title p{
+    color:#666;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:-45px;
+    position:relative;
+}
+
+.stat{
+    background:white;
+    padding:25px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 4px 18px rgba(0,0,0,.1);
+}
+
+.stat h3{
+    color:#0b63ce;
+    font-size:30px;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:#073b7a;
+    margin-bottom:10px;
+}
+
+.why{
+    background:#073b7a;
+    color:white;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.why .card{
+    color:#222;
+}
+
+.form-box{
+    background:white;
+    padding:35px;
+    border-radius:12px;
+    max-width:900px;
+    margin:auto;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:13px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:15px;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+.success{
+    background:#eaf7ee;
+    color:#18753c;
+    padding:15px;
+    margin-top:15px;
+    border-radius:6px;
+    display:none;
+}
+
+/* ELIGIBILITY */
+
+.checker-section{
+    background:#eef5ff;
+}
+
+.checker{
+    max-width:950px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 5px 25px rgba(0,0,0,.1);
+}
+
+.progress{
+    height:10px;
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:30px;
+}
+
+.progress-bar{
+    height:100%;
+    width:20%;
+    background:#0b63ce;
+    transition:.3s;
+}
+
+.step{
+    display:none;
+}
+
+.step.active{
+    display:block;
+}
+
+.step h3{
+    color:#073b7a;
+    margin-bottom:20px;
+}
+
+.question{
+    margin-bottom:18px;
+}
+
+.question label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:6px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:space-between;
+    margin-top:25px;
+}
+
+.back-btn{
+    background:#ddd;
+}
+
+.result{
+    display:none;
+    text-align:center;
+}
+
+.score{
+    font-size:65px;
+    font-weight:bold;
+    color:#0b63ce;
+    margin:20px;
+}
+
+.result-box{
+    background:#eef7ff;
+    padding:25px;
+    border-radius:10px;
+    margin:20px 0;
+}
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:28px;
+    z-index:9999;
+}
+
+footer{
+    background:#061d3d;
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+}
+
+@media(max-width:800px){
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .stats,
+    .services,
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .checker{
+        padding:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="navbar">
+
+<a href="#home">
+<img src="AOClogo.png" class="logo" alt="Ayansh Overseas Consultancy">
+</a>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#eligibility">Eligibility Checker</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+<div>
+
+<h1>Turn Your Study Abroad Dream Into Reality</h1>
+
+<p>
+Study in the UK, Canada, Australia, USA and other leading destinations
+with professional guidance from Ayansh Overseas Consultancy.
+</p>
+
+<a href="#eligibility" class="btn">
+Check Your Eligibility
+</a>
+
+</div>
+</section>
+
+
+<!-- STATS -->
+
+<div class="container">
+<div class="stats">
+
+<div class="stat">
+<h3>1000+</h3>
+<p>Students Assisted</p>
+</div>
+
+<div class="stat">
+<h3>8+</h3>
+<p>Study Destinations</p>
+</div>
+
+<div class="stat">
+<h3>100+</h3>
+<p>University Options</p>
+</div>
+
+<div class="stat">
+<h3>Free</h3>
+<p>Initial Consultation</p>
+</div>
+
+</div>
+</div>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Our Services</h2>
+<p>Complete support from course selection to your journey abroad.</p>
+</div>
+
+<div class="services">
+
+<div class="card">
+<h3>🎓 Course & University Selection</h3>
+<p>Find suitable courses and universities based on your academic profile and career goals.</p>
+</div>
+
+<div class="card">
+<h3>💼 Career Counselling</h3>
+<p>Professional guidance to help you choose the right academic and career pathway.</p>
+</div>
+
+<div class="card">
+<h3>📋 Visa Assistance</h3>
+<p>Guidance with your student visa application and supporting documentation.</p>
+</div>
+
+<div class="card">
+<h3>✈️ Pre-Departure Guidance</h3>
+<p>Get prepared for your journey with useful pre-departure information.</p>
+</div>
+
+<div class="card">
+<h3>🏠 Accommodation</h3>
+<p>Assistance finding suitable accommodation for your studies abroad.</p>
+</div>
+
+<div class="card">
+<h3>✈️ Travel Assistance</h3>
+<p>Support and guidance with your travel arrangements.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- WHY US -->
+
+<section class="why">
+
+<div class="container">
+
+<div class="section-title">
+<h2 style="color:white;">Why Choose Ayansh?</h2>
+</div>
+
+<div class="why-grid">
+
+<div class="card">
+<h3>Personalised Guidance</h3>
+<p>We assess your individual academic and financial profile.</p>
+</div>
+
+<div class="card">
+<h3>Multiple Destinations</h3>
+<p>Explore study opportunities across major international destinations.</p>
+</div>
+
+<div class="card">
+<h3>End-to-End Support</h3>
+<p>From choosing a university to preparing for your journey abroad.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ELIGIBILITY CHECKER -->
+
+<section class="checker-section" id="eligibility">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Free Study Abroad Eligibility Checker</h2>
+
+<p>
+Find out how your academic, English, financial and visa profile
+may fit your study abroad plans.
+</p>
+
+</div>
+
+
+<div class="checker">
+
+<div class="progress">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+
+
+<form id="eligibilityForm">
+
+
+<!-- STEP 1 -->
+
+<div class="step active">
+
+<h3>Step 1 — Personal & Contact Information</h3>
+
+<div class="question">
+<label>Full Name *</label>
+<input type="text" name="fullName" required>
+</div>
+
+<div class="question">
+<label>Age *</label>
+<input type="number" name="age" min="16" max="80" required>
+</div>
+
+<div class="question">
+<label>Gender</label>
+<select name="gender">
+<option value="">Select</option>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="question">
+<label>Nationality *</label>
+<input type="text" name="nationality" required>
+</div>
+
+<div class="question">
+<label>Current Country & City *</label>
+<input type="text" name="location" required>
+</div>
+
+<div class="question">
+<label>WhatsApp / Mobile *</label>
+<input type="tel" name="phone" required>
+</div>
+
+<div class="question">
+<label>Email *</label>
+<input type="email" name="email" required>
+</div>
+
+<div class="buttons">
+<span></span>
+<button type="button" class="btn next">Next →</button>
+</div>
+
+</div>
+
+
+<!-- STEP 2 -->
+
+<div class="step">
+
+<h3>Step 2 — Academic Background</h3>
+
+<div class="question">
+<label>Highest Qualification *</label>
+
+<select name="qualification" required>
+<option value="">Select</option>
+<option>10th / Secondary</option>
+<option>12th / Higher Secondary</option>
+<option>Diploma</option>
+<option>Bachelor's Degree</option>
+<option>Master's Degree</option>
+<option>PhD</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="question">
+<label>Course / Major</label>
+<input type="text" name="courseMajor">
+</div>
+
+<div class="question">
+<label>University / College</label>
+<input type="text" name="university">
+</div>
+
+<div class="question">
+<label>Percentage / CGPA</label>
+<input type="text" name="percentage">
+</div>
+
+<div class="question">
+<label>Graduation Year</label>
+<input type="number" name="graduationYear" min="1950" max="2035">
+</div>
+
+<div class="question">
+<label>Active Backlogs?</label>
+
+<select name="backlogs">
+<option>No</option>
+<option>Yes</option>
+</select>
+
+</div>
+
+<div class="question">
+<label>Study Gap?</label>
+
+<select name="studyGap">
+<option>No</option>
+<option>Yes</option>
+</select>
+
+</div>
+
+<div class="question">
+<label>If yes, explain gap reason</label>
+<textarea name="gapReason"></textarea>
+</div>
+
+
+<div class="buttons">
+
+<button type="button" class="btn back-btn prev">
+← Back
+</button>
+
+<button type="button" class="btn next">
+Next →
+</button>
+
+</div>
+
+</div>
+
+
+<!-- STEP 3 -->
+
+<div class="step">
+
+<h3>Step 3 — English & Work Experience</h3>
+
+<div class="question">
+
+<label>English Test</label>
+
+<select name="englishTest">
+<option value="">Select</option>
+<option>IELTS</option>
+<option>PTE</option>
+<option>TOEFL</option>
+<option>Duolingo</option>
+<option>UKVI IELTS</option>
+<option>Not Taken</option>
+<option>Other</option>
+</select>
+
+</div>
+
+<div class="question">
+
+<label>Overall English Score</label>
+
+<input type="text" name="englishScore">
+
+</div>
+
+<div class="question">
+
+<label>Work Experience</label>
+
+<select name="experience">
+<option>No Experience</option>
+<option>Less than 1 year</option>
+<option>1–2 years</option>
+<option>2–5 years</option>
+<option>5+ years</option>
+</select>
+
+</div>
+
+<div class="question">
+
+<label>Current / Previous Job Title</label>
+
+<input type="text" name="jobTitle">
+
+</div>
+
+
+<div class="buttons">
+
+<button type="button" class="btn back-btn prev">
+← Back
+</button>
+
+<button type="button" class="btn next">
+Next →
+</button>
+
+</div>
+
+</div>
+
+
+<!-- STEP 4 -->
+
+<div class="step">
+
+<h3>Step 4 — Financial Preparedness</h3>
+
+<div class="question">
+
+<label>Available Study Funds *</label>
+
+<select name="funds" required>
+
+<option value="">Select</option>
+
+<option>Less than £10,000</option>
+<option>£10,000 – £20,000</option>
+<option>£20,000 – £30,000</option>
+<option>£30,000 – £40,000</option>
+<option>£40,000+</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>Primary Funding Source</label>
+
+<select name="fundingSource">
+
+<option>Self</option>
+<option>Parents</option>
+<option>Spouse</option>
+<option>Family Sponsor</option>
+<option>Education Loan</option>
+<option>Combination</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>Sponsor Relationship</label>
+
+<input type="text" name="sponsorRelationship">
+
+</div>
+
+
+<div class="question">
+
+<label>Approx. Sponsor Annual Income</label>
+
+<input type="text" name="sponsorIncome">
+
+</div>
+
+
+<div class="question">
+
+<label>Education Loan Planned?</label>
+
+<select name="loan">
+
+<option>No</option>
+<option>Yes</option>
+<option>Already Approved</option>
+
+</select>
+
+</div>
+
+
+<div class="buttons">
+
+<button type="button" class="btn back-btn prev">
+← Back
+</button>
+
+<button type="button" class="btn next">
+Next →
+</button>
+
+</div>
+
+</div>
+
+
+<!-- STEP 5 -->
+
+<div class="step">
+
+<h3>Step 5 — Preferences & Visa History</h3>
+
+<div class="question">
+
+<label>Preferred Study Level *</label>
+
+<select name="studyLevel" required>
+
+<option value="">Select</option>
+<option>Foundation</option>
+<option>Undergraduate</option>
+<option>Postgraduate</option>
+<option>Master's</option>
+<option>MBA</option>
+<option>PhD</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>Preferred Course</label>
+
+<input type="text" name="preferredCourse">
+
+</div>
+
+
+<div class="question">
+
+<label>Preferred Intake</label>
+
+<select name="intake">
+
+<option>January</option>
+<option>May</option>
+<option>September</option>
+<option>October</option>
+<option>Flexible</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>Previous Visa Refusal?</label>
+
+<select name="visaRefusal">
+
+<option>No</option>
+<option>Yes</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>Previous UK Travel / Visa History</label>
+
+<textarea name="ukHistory"></textarea>
+
+</div>
+
+
+<div class="question">
+
+<label>How did you find us?</label>
+
+<select name="source">
+
+<option>Google</option>
+<option>Instagram</option>
+<option>Facebook</option>
+<option>WhatsApp</option>
+<option>Friend / Family</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+
+<div class="buttons">
+
+<button type="button" class="btn back-btn prev">
+← Back
+</button>
+
+<button type="submit" class="btn">
+Check My Eligibility
+</button>
+
+</div>
+
+</div>
+
+</form>
+
+
+<!-- RESULT -->
+
+<div class="result" id="result">
+
+<h2>Your Preliminary Assessment</h2>
+
+<div class="score" id="score">
+0/100
+</div>
+
+<h3 id="resultTitle"></h3>
+
+<div class="result-box">
+
+<p id="resultMessage"></p>
+
+</div>
+
+<p>
+Our team can review your profile in more detail and suggest
+suitable study destinations, courses and universities.
+</p>
+
+<br>
+
+<a
+href="https://wa.me/447366656656?text=Hi%20Ayansh%20Overseas%20Consultancy,%20I%20completed%20the%20online%20eligibility%20checker."
+target="_blank"
+class="btn">
+
+Speak to a Consultant on WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT FORM -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Book Your Free Consultation</h2>
+
+<p>Leave your details and our team will contact you.</p>
+
+</div>
+
+
+<div class="form-box">
+
+<form id="leadForm">
+
+<div class="form-grid">
+
+<div>
+<label>Full Name *</label>
+<input type="text" name="name" required>
+</div>
+
+<div>
+<label>Email *</label>
+<input type="email" name="email" required>
+</div>
+
+<div>
+<label>Phone / WhatsApp *</label>
+<input type="tel" name="phone" required>
+</div>
+
+<div>
+<label>City</label>
+<input type="text" name="city">
+</div>
+
+<div>
+<label>Preferred Destination</label>
+
+<select name="destination">
+
+<option>UK</option>
+<option>Canada</option>
+<option>Australia</option>
+<option>USA</option>
+<option>New Zealand</option>
+<option>Germany</option>
+<option>Ireland</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label>Visa Type</label>
+
+<select name="visaType">
+
+<option>Student Visa</option>
+<option>Visitor Visa</option>
+<option>Dependent Visa</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+
+<div class="full">
+
+<label>Message</label>
+
+<textarea name="message"></textarea>
+
+</div>
+
+
+<div class="full">
+
+<button type="submit" class="btn">
+Submit Enquiry
+</button>
+
+</div>
+
+</div>
+
+</form>
+
+
+<div class="success" id="successMessage">
+Thank you! Your enquiry has been submitted successfully.
+Our team will contact you shortly.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>About Ayansh Overseas Consultancy</h2>
+
+</div>
+
+<div class="card">
+
+<p>
+Ayansh Overseas Consultancy provides guidance to students planning
+to study abroad. We help students understand their options,
+identify suitable courses and universities, prepare applications
+and receive guidance throughout the visa process.
+</p>
+
+<br>
+
+<p>
+Our online eligibility checker allows prospective students to
+provide their academic, English, financial and visa information
+before speaking with our consultancy team.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<h3>Ayansh Overseas Consultancy</h3>
+
+<p>Study Abroad With Confidence</p>
+
+<p>© 2026 Ayansh Overseas Consultancy. All Rights Reserved.</p>
+
+</footer>
+
+
+<!-- WHATSAPP -->
+
+<a
+class="whatsapp"
+href="https://wa.me/447366656656"
+target="_blank"
+aria-label="WhatsApp">
+
+💬
+
+</a>
+
+
+<script>
+
+/* =========================================
+   GOOGLE APPS SCRIPT
+========================================= */
+
+const SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbxTUXzp87NBcUbLLsSzd3lavJyt67RogcZmpn9dbEfEAy0QEPlg6fgNEJgQxunia9D8/exec";
+
+
+/* =========================================
+   ELIGIBILITY CHECKER
+========================================= */
+
+const steps =
+document.querySelectorAll(".step");
+
+const progressBar =
+document.getElementById("progressBar");
+
+let currentStep = 0;
+
+
+function showStep(index){
+
+    steps.forEach((step,i)=>{
+
+        step.classList.toggle(
+            "active",
+            i === index
+        );
+
+    });
+
+    progressBar.style.width =
+        ((index + 1) / steps.length * 100) + "%";
+
+    window.scrollTo({
+        top:document.getElementById("eligibility").offsetTop - 80,
+        behavior:"smooth"
+    });
+}
+
+
+document.querySelectorAll(".next").forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        const current =
+            steps[currentStep];
+
+        const inputs =
+            current.querySelectorAll(
+                "input,select,textarea"
+            );
+
+        let valid = true;
+
+        inputs.forEach(input=>{
+
+            if(!input.checkValidity()){
+
+                input.reportValidity();
+
+                valid = false;
+
+            }
+
+        });
+
+        if(!valid) return;
+
+        if(currentStep < steps.length - 1){
+
+            currentStep++;
+
+            showStep(currentStep);
+
+        }
+
+    });
+
+});
+
+
+document.querySelectorAll(".prev").forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        if(currentStep > 0){
+
+            currentStep--;
+
+            showStep(currentStep);
+
+        }
+
+    });
+
+});
+
+
+/* =========================================
+   ELIGIBILITY RESULT
+========================================= */
+
+document.getElementById("eligibilityForm")
+.addEventListener("submit",async function(e){
+
+    e.preventDefault();
+
+
+    const formData =
+        new FormData(this);
+
+
+    let score = 100;
+
+
+    /* Academic */
+
+    if(formData.get("backlogs") === "Yes"){
+        score -= 15;
+    }
+
+    if(formData.get("studyGap") === "Yes"){
+        score -= 5;
+    }
+
+
+    /* English */
+
+    if(formData.get("englishTest") === "Not Taken"){
+        score -= 10;
+    }
+
+
+    /* Finance */
+
+    const funds =
+        formData.get("funds");
+
+    if(funds === "Less than £10,000"){
+        score -= 20;
+    }
+
+    else if(funds === "£10,000 – £20,000"){
+        score -= 10;
+    }
+
+
+    /* Visa history */
+
+    if(formData.get("visaRefusal") === "Yes"){
+        score -= 15;
+    }
+
+
+    score =
+        Math.max(0,Math.min(100,score));
+
+
+    let title;
+    let message;
+
+
+    if(score >= 75){
+
+        title =
+        "Good Potential";
+
+        message =
+        "Based on the information provided, your profile shows good potential for studying abroad. A detailed assessment is recommended before making any application.";
+
+    }
+
+    else if(score >= 55){
+
+        title =
+        "Further Review Required";
+
+        message =
+        "Your profile may have suitable study options, but some areas require further review. Our consultants can assess your profile and recommend suitable options.";
+
+    }
+
+    else{
+
+        title =
+        "Detailed Assessment Recommended";
+
+        message =
+        "Your profile may require additional consideration. Please speak with our consultancy team for a detailed assessment and possible alternative study options.";
+
+    }
+
+
+    document.getElementById("score")
+        .textContent =
+        score + "/100";
+
+
+    document.getElementById("resultTitle")
+        .textContent =
+        title;
+
+
+    document.getElementById("resultMessage")
+        .textContent =
+        message;
+
+
+    document.getElementById("eligibilityForm")
+        .style.display =
+        "none";
+
+
+    document.getElementById("result")
+        .style.display =
+        "block";
+
+
+    /* Send lead to Google Apps Script */
+
+    const data = {};
+
+    formData.forEach((value,key)=>{
+        data[key] = value;
+    });
+
+    data.score = score;
+    data.result = title;
+    data.type = "Eligibility Checker Lead";
+
+
+    try{
+
+        await fetch(
+            SCRIPT_URL,
+            {
+                method:"POST",
+                mode:"no-cors",
+                headers:{
+                    "Content-Type":
+                    "application/x-www-form-urlencoded"
+                },
+                body:
+                new URLSearchParams(data)
+            }
+        );
+
+    }catch(error){
+
+        console.log(error);
+
+    }
+
+
+    /* Google Ads conversion */
+
+    if(typeof gtag === "function"){
+
+        gtag(
+            "event",
+            "conversion",
+            {
+                "send_to":
+                "AW-18393259750/a7WpCMuJ2eIcEOa9y8JE"
+            }
+        );
+
+    }
+
+});
+
+
+/* =========================================
+   NORMAL CONTACT LEAD FORM
+========================================= */
+
+document.getElementById("leadForm")
+.addEventListener("submit",async function(e){
+
+    e.preventDefault();
+
+
+    const form =
+        new FormData(this);
+
+
+    const data = {};
+
+    form.forEach((value,key)=>{
+        data[key] = value;
+    });
+
+
+    data.type =
+        "Website Consultation Lead";
+
+
+    try{
+
+        await fetch(
+            SCRIPT_URL,
+            {
+                method:"POST",
+                mode:"no-cors",
+                headers:{
+                    "Content-Type":
+                    "application/x-www-form-urlencoded"
+                },
+                body:
+                new URLSearchParams(data)
+            }
+        );
+
+
+        document.getElementById(
+            "successMessage"
+        ).style.display = "block";
+
+
+        this.reset();
+
+
+        if(typeof gtag === "function"){
+
+            gtag(
+                "event",
+                "conversion",
+                {
+                    "send_to":
+                    "AW-18393259750/a7WpCMuJ2eIcEOa9y8JE"
+                }
+            );
+
+        }
+
+    }
+
+    catch(error){
+
+        alert(
+            "There was a problem submitting your enquiry. Please contact us on WhatsApp."
+        );
+
+        console.log(error);
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
