@@ -19,6 +19,7 @@ gtag('config', 'AW-18393259750');
 </script>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -32,12 +33,62 @@ body{
     background:#f7f9fc;
 }
 
+
+/* HEADER COMPANY NAME */
+
+.brand{ 
+    display:flex; 
+    align-items:center; 
+    gap:12px; 
+    text-decoration:none; 
+} 
+ 
+.company-name{ 
+    display:flex; 
+    flex-direction:column; 
+    line-height:1.1; 
+} 
+ 
+.company-name strong{ 
+    color:#073b7a; 
+    font-size:21px; 
+    font-weight:800; 
+} 
+ 
+.company-name span{ 
+    color:#ffb400; 
+    font-size:16px; 
+    font-weight:700; 
+} 
+ 
+@media(max-width:600px){ 
+    .company-name strong{ 
+        font-size:16px; 
+    } 
+ 
+    .company-name span{ 
+        font-size:13px; 
+    } 
+ 
+    .logo{ 
+        height:50px; 
+    } 
+}
+
+
+/* REST OF YOUR CSS */
+
 header{
     background:#fff;
     position:sticky;
     top:0;
     z-index:1000;
     box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+/* ...your other CSS... */
+
+</style>
 }
 
 .navbar{
